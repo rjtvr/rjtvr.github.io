@@ -4,56 +4,97 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+
+	<!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="Images/favico.png">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+	    $(window).on('load',function(){
+	        $('#myModal').modal('show');
+	    });
+	</script>
+
 </head>
 <body>
-<nav class="navbar ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        	<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>                        
-      	</button>
-      	<a class="navbar-brand" href="#home">rjtvr.Github.io</a>
+	<!-- on start Modal (start here)-->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Under Construction</h4>
+        </div>
+        <div class="modal-body">
+          <p>I'm working on it.</p>
+          <p>Thank you for visiting my arena.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
     </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li>
-					<a href="#home">SKILLS</a>
-				</li>
-				<li>
-					<a href="#aboutme">ABOUT ME</a>
-				</li>
-				<li>
-					<a href="#contact">CONTACT</a>
-				</li>
-				<li>
-					<a href="#cv">CURRICULUM VITAE</a>
-				</li>  
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
-				</li>
-			</ul>
+  </div>
+  <!-- modal ends here -->
+
+	<nav class="navbar navbar-myDesign">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+	        	<span class="icon-bar bars"></span>
+	        	<span class="icon-bar bars"></span>
+	        	<span class="icon-bar bars"></span>                        
+	      	</button>
+	      	<a class="navbar-brand" href="#home">rjtvr.Github.io</a>
 	    </div>
-	</div>
-</nav>
-<div id="home" class="jumbotron text-center">
-	<center>
-		<img src="Images/dispImage.png" class="img-circle img-responsive main-img" style="border:5px dotted red">
-	</center>
-	<h1>@rjtvr.github.io</h1>
-	<h3> Programmer and Web Dev(frontend) </h3>
-</div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#"><span class="glyphicons glyphicons-show-thumbnails"></span> Home</a>
+					</li>
+					<li>
+						<a href="#skill"><span class="glyphicons glyphicons-check" aria-hidden="true"></span> SKILLS</a>
+					</li>
+					<li>
+						<a href="#aboutme"><span class="glyphicons glyphicons-old-man"></span> ABOUT ME</a>
+					</li>
+					<li>
+						<a href="#contact"><span class="glyphicons glyphicons-phone-alt"></span> CONTACT</a>
+					</li>
+					<li>
+						<a href="#cv"><abbr title="CURRICULUM VITAE" style="text-decoration: none; border-bottom: 0px">
+						<span class="glyphicons glyphicons-list-alt"></span>CV</abbr></a>
+					</li>  
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+					</li>
+				</ul>
+		    </div>
+		</div>
+	</nav>
+
+	<div id="home" class="jumbotron text-center">
+		<center>
+			<img src="Images/dispImage.png" class=" img-circle img-responsive main-img myImgFormate" 
+			data-toggle="tooltip" title="It's me Rajat">
+		</center>
+		<h1>@rjtvr.github.io</h1>
+		<h3> Programmer and Web Dev(frontend) </h3>
+
+		<center>
+			<img class="downArrow" src="Images/arrow.png">
+		</center>
+	</div>  
   
 
-  
-  
   
 </body>
 </html>
