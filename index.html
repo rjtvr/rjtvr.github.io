@@ -40,29 +40,31 @@
 </head>
 <body>
 	<!-- on start Modal (start here)-->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Under Construction</h4>
-        </div>
-        <div class="modal-body">
-          <p>I'm working on it.</p>
-          <p>Thank you for visiting my arena.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  <!-- modal ends here -->
+  	<div class="modal fade" id="myModal" role="dialog">
+    	<div class="modal-dialog">
+    		<!-- Modal content-->
+	      	<div class="modal-content">
+	        	<div class="modal-header">
+	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	         	 	<h4 class="modal-title">Under Construction</h4>
+	        	</div>
+	        	<div class="modal-body">
+	          		<p>I'm working on it.</p>
+	        	  	<p>Thank you for visiting</p>
+	        	  	<h2>Updates</h2>
+	        	  	<p>About Me is working</p>
+	        	  	<p>Problem with glyphicons right now</p>
+	        	</div>
+	        	<div class="modal-footer">
+	        	  	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        	</div>
+	      	</div>
+    	</div>
+  	</div>
+  	<!-- modal ends here -->
 
-	<nav class="navbar navbar-myDesign">
+  	<!-- navbar starts here -->
+	<nav class="navbar navbar-fixed-top navbar-myDesign">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
@@ -75,7 +77,7 @@
 		    <div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="active">
-						<a href="#"><span class="glyphicon glyphicon-th"></span> Home</a>
+						<a href="#home"><span class="glyphicon glyphicon-th"></span> Home</a>
 					</li>
 					<li>
 						<a href="#skill"><span class="glyphicons glyphicons-check" aria-hidden="true"></span> SKILLS</a>
@@ -100,18 +102,61 @@
 		</div>
 	</nav>
 
+	<!-- home screen personal details update -->
 	<div id="home" class="jumbotron text-center">
 		<center>
 			<img src="Images/dispImage.png" class=" img-circle img-responsive main-img myImgFormate" 
 			data-toggle="tooltip" title="It's me Rajat">
 		</center>
-		<h1>@rjtvr.github.io</h1>
+		<h1><kbd style="background-color: #05386B;"> @rjtvr.github.io </kbd></h1>
 		<h3> Programmer and Web Dev(frontend) </h3>
-
 		<center>
-			<img class="downArrow" src="Images/arrow.png">
+		<div class="text-center container row  visible-lg"> 
+			<div class="col-sm-12">
+				<a href="#null"><img class="downArrow" src="Images/arrow.png"></a>
+			</div>	
+		</div>
 		</center>
-	</div>  
+	</div>
+
+	<!-- aboutme -->
+		<div id="abt" class="container-fluid" style="height: 96vh; ">
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-3">
+				<img class="img-responsive" src="Images/meImage.png">
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-6">
+				<h1>ABOUT ME! <span class="label" style="font-size: 15px; background-color: #5CDB95">FRESHER</span></h1>
+					<p class="text-justify txt-formate" >
+						Howdy! I'm Rajat.
+						I'm a Bachelor of Technology (B.tech) student, discipline Computer Science Engineering. Currently Undergraduate and expected to graduated in 2019.<br/>
+						My primarily interest in <mark>Web Development</mark> (frontend), <mark>programming</mark> (usually i prefer java ) and i upgrade my skill time to time,
+						now days every software, applications, website etc only popular because of its interface and how smoothly its works, So i always 
+						make my product easy to use and easy to understand. 
+
+
+						<br/><br/>How to grow in any feild ? (as per me)<br/>
+						1. Surround yourself with people who are better than you and who want to keep growing<br/>
+						2. Specialize in the things that you like to do 24x7 such as codeing, designing, etc.<br/>
+						3. Create a firm way go fot your goals and leave the best world.<br><br> 
+
+						<div style="font-size: 15px;">
+							<p><span class="glyphicon glyphicon-earphone"></span> +91-97-1633-1648</p>
+							<p><span class="glyphicon glyphicon-map-marker"></span> New Delhi, India</p>
+							<p><span class="glyphicon glyphicon-envelope"></span> rajatverma1633@gmail.com</p>
+						</div>
+					</p>
+			</div>
+			<div class="col-sm-1"></div>	
+			<div class="footer-image-container" >
+        		<img class="img-responsive footer-image" src="Images/AbtFooter.png">
+        	</div>
+		</div>
+	</div>
+
+
   
 
   
