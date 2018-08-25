@@ -14,7 +14,7 @@ html *
    /*font-family: 'Titillium Web', sans-serif !important;*/
 }
 body {
-	overflow-y:hidden;  
+	/*overflow-y:hidden;  */
 	/*background-color: #EDF5E1 !important;*/
 }
   @media screen and (max-width: 768px) {
@@ -28,7 +28,7 @@ body {
 	margin-bottom: 0 !important;
 	border-radius: 0 !important;
 	font-size: 18px !important;
-	border-bottom: 2px solid #05386B !important;
+	border-bottom: 1px solid #05386B !important;
 }
 .collapse a{
 	color: #5CDB95 !important;
@@ -60,12 +60,15 @@ body {
 	background-image: url('../Images/bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+    background-size: 100% auto;
 /*    opacity: 0.2;
     filter: alpha(opacity=20);*/ /* For IE8 and earlier */
-    margin-top: 50px;
-    height: 100vh; 
-    padding-top: 50px;
-    background-position: center;
+    height: 100vh;
+    border: 0px solid black; 
+    margin-top: 0px;
+    padding-top: 0px;
+
 }
 .downArrow{
 	margin-top: 5%; 
