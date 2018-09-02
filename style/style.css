@@ -8,14 +8,13 @@
  * 
  * white contrast used : #EDF5E1				
  */
-
 html *
 {
    /*font-family: 'Titillium Web', sans-serif !important;*/
 }
 body {
 	/*overflow-y:hidden;  */
-	/*background-color: #EDF5E1 !important;*/
+	background-color: #5CDB95 !important;
 }
   @media screen and (max-width: 768px) {
     .col-sm-4 {
@@ -85,6 +84,20 @@ body {
 .txt-formate{
 	font-size: 19px;
 
+}
+
+.panel { 
+	border: 1px solid #5CDB95 !important; 
+	transition: box-shadow 0.5s;
+}
+.panel:hover {
+	box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+.panel-heading ,.panel-footer{
+	background-color: #5CDB95 !important;
+}
+.panel-body{
+	background-color: white !important ;
 }
 /*CSS3 bounce animation*/
 
