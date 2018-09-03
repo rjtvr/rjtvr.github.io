@@ -99,6 +99,11 @@ body {
 .panel-body{
 	background-color: white !important ;
 }
+.panel-img-design{
+	width: 150px; 
+	height: 150px;
+}
+
 /*CSS3 bounce animation*/
 
  @keyframes bounce {
