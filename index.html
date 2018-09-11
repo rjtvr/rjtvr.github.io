@@ -6,7 +6,7 @@
 	<!-- custom stylesheet  -->
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="Images/favico.png">
+    <link rel="shortcut icon" href="images/favico.png">
 	<!-- font  -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">   -->
 	<!-- Bootstrap cdn and other required cdn -->
@@ -15,287 +15,111 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript">
-	    $(window).on('load',function(){
-	        $('#myModal').modal('show');
-	    });
-	</script>
+	<style type="text/css">
 
-	<script>
-		$(document).ready(function(){
-			$(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-			  	if (this.hash !== "") {
-				event.preventDefault();
-				var hash = this.hash;
-				$('html, body').animate({
-				  scrollTop: $(hash).offset().top
-				}, 900, function(){
-				  window.location.hash = hash;
-				  });
-				}
-			});
-		})
-</script> 
-
+	</style>
 </head>
 <body>
 
-
-  	<!-- navbar starts here -->
-	<nav class="navbar navbar-fixed-top navbar-myDesign">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
-	        	<span class="icon-bar bars"></span>
-	        	<span class="icon-bar bars"></span>
-	        	<span class="icon-bar bars"></span>                        
-	      	</button>
-	      	<a class="navbar-brand" href="#home"><kbd style="font-size: 16px;background-color: #5CDB95;">rjtvr.Github.io</kbd></a>
-	    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="#home"><span class="glyphicon glyphicon-th"></span> Home</a>
-					</li>
-					<li>
-						<a href="#skill"><span class="glyphicons glyphicons-check" aria-hidden="true"></span> SKILLS</a>
-					</li>
-					<li>
-						<a href="#abt"><span class="glyphicons glyphicons-old-man"></span> ABOUT ME</a>
-					</li>
-					<li>
-						<a href="#cv"><abbr title="CURRICULUM VITAE" style="text-decoration: none; border-bottom: 0px">
-						<span class="glyphicons glyphicons-list-alt"></span>CV</abbr></a>
-					</li>
-					<li>
-						<a href="#cont"><span class="glyphicons glyphicons-phone-alt"></span> CONTACT ME</a>
-					</li>  
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="https://github.com/rjtvr"><span class="glyphicon glyphicon-retweet"></span> Git.rjtvr</a>
-					</li>
-				</ul>
-		    </div>
-		</div>
-	</nav>
-
-	<!-- home screen personal details update -->
-	<div id="home" class="jumbotron text-center">
-		<center>
-			<img src="Images/dispImage.png" class="img-circle img-responsive main-img myImgFormate margin" 
-			data-toggle="tooltip" title="It's me Rajat">
-		</center>
-		<h1><kbd style="background-color: #05386B;"> @rjtvr.github.io </kbd></h1>
-		<h3> Programmer and Web Dev(frontend) </h3>
-		<center>
-		<div class="text-center container row  visible-lg"> 
-			<div class="col-sm-12">
-				<a href="#skill">
-					<img class="downArrow" src="Images/arrow.png">
-				</a>
-			</div>	
-		</div>
-		</center>
-	</div>
-
-	<!-- Skills section -->
-	<div id="skill" class="container-fluid text-center img-mycontainer " style="padding: 60px 50px;">
-		
-		<div class="text-center">
-		    <h2>Skills</h2>
-		    <h4>Innovation and me, complete package</h4>
-	  	</div>
-	  	<br>
-		<div class="row ">
-			<div class="col-sm-3 col-xs-12">
-		    	<div class="panel panel-default text-center">
-			        <div class="panel-heading">
-			          	<h2>Website Dev</h2>
-			        </div>
-			        <div class="panel-body">
-			        	<img class="panel-img-design" src="Images/resp.png" >
-			        </div>
-			        <div class="panel-footer">
-			          	<h4 class="text-justify">
-			          		web Develpoment, i mainly works on frontend designing.
-			          		I design and thing as per user point of view. Designed the website 
-			          		that should responds to the user's behavior and responsivly fits on any type of 
-			          		devices like mobile, tab, and PC etc. I believe that a web page have to easy, 
-			          		that user can operate that even eyes are closed
-			          	</h4>
-			        </div>
-		      	</div>      
-		    </div> 
-
-		    <div class="col-sm-3 col-xs-12">
-		      	<div class="panel panel-default text-center">
-			        <div class="panel-heading">
-			          	<h2>Innovative Idea's</h2>
-			        </div>
-			        <div class="panel-body">
-			        	<img class="panel-img-design" src="Images/idea.png" >
-			        </div>
-			        <div class="panel-footer">
-			          	<h4 class="text-justify">
-			          		Idea, is the word that means alot itself, if you have 
-			          		no idea the nothing going to worth. I personally like this line
-			          		"If you have no idea get idea". And one more implement your idea 
-			          		as faster as you can before some steal your idea, if you like to be big, 
-			          		thing big and make thing possible and big		    
-			          	</h4>
-			        </div>
-		    	</div>      
-		    </div>
-
-		    <div class="col-sm-3 col-xs-12">
-		      	<div class="panel panel-default text-center">
-			        <div class="panel-heading">
-			          	<h2>Design</h2>
-			        </div>
-			        <div class="panel-body">
-			        	<img class="panel-img-design" src="Images/design.png" >
-			        </div>
-			        <div class="panel-footer">
-			          	<h4 class="text-justify">
-			          		Design is the baseline for every project.
-			          		I usually free sketch the design, then create the prototype of the same
-			          		using wireframe. By using Wireframe i design a website service at the structural level, with any codes.
-			          		wireframe gives feel how its goes in real. After this i concentrate on UI with perfect "Look and Feel".  
-			          	</h4>
-			        </div>
-		    	</div>      
-		    </div>
-
-
-			<div class="col-sm-3 col-xs-12">
-		      	<div class="panel panel-default text-center">
-			        <div class="panel-heading">
-			          	<h2>Coding Streams</h2>
-			        </div>
-			        <div class="panel-body">
-			        	<img class="panel-img-design" src="Images/code.png" >
-			        </div>
-			        <div class="panel-footer">
-			          	<h4 class="text-justify">
-			          		I code for make thing possible. for frontend HTML, CSS, Js and Bootstrap.
-			          		My aim is to make website as easy as "amazon.com" one word for this website its 
-			          		"easy peasy" for any type of user. I also have knowledge of webBuilders like Wordpress, Durpal etc.
-			          		And i also have knowledge of languages Java etc.
-			          	</h4>
-			        </div>
-		    	</div>      
-		    </div>	      
-	    </div>    
-  	</div>
-
-	</div>
-
-	<!-- aboutme -->
-	<div id="abt" class="container-fluid" style="height: 100vh; padding-top: 50px; ">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-3  col-xs-12">
-				<img class="img-responsive meImgDesign" src="Images/meImage.png">
+			<div class="col-md-12 rjt-banner-left">
+				<div class="rjt-banner-left-txt">
+					<h3>IAM RAJAT</h3>
+					<p>WEB & <br> SOFWARE DEVELOPER</p>
+		        </div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-sm-1"></div>
-			<div class="col-sm-6 col-xs-12">
-				<h1>ABOUT ME! <span class="label" style="font-size: 15px; background-color: #379683">FRESHER</span></h1>
-					<p class="text-justify txt-formate" >
-						Howdy! I'm Rajat.
-						I'm a Bachelor of Technology (B.tech) student, discipline Computer Science Engineering. Currently Undergraduate and expected to graduated in 2019.<br/>
-						My primarily interest in <mark>Web Development</mark> (frontend), <mark>programming</mark> (usually i prefer java ) and i upgrade my skill time to time,
-						now days every software, applications, website etc only popular because of its interface and how smoothly its works, So i always 
-						make my product easy to use and easy to understand. 
-
-
-						<br/><br/>How to grow in any feild ? (as per me)<br/>
-						1. Surround yourself with people who are better than you and who want to keep growing<br/>
-						2. Specialize in the things that you like to do 24x7 such as codeing, designing, etc.<br/>
-						3. Create a firm way go fot your goals and leave the best world.<br><br> 
-
-						<div style="font-size: 15px;">
-							<p><span class="glyphicon glyphicon-earphone"></span> +91-97-1633-1648</p>
-							<p><span class="glyphicon glyphicon-map-marker"></span> New Delhi, India</p>
-							<p><span class="glyphicon glyphicon-envelope"></span> rajatverma1633@gmail.com</p>
-						</div>
-					</p>
+		</div>
+	</div>
+	<div class="container-fluid text-center">
+		<div class="row">
+			<div class="col-md-12 col-xs-12 rjt-skill-txt">
+				<h3>SKILLS</h3> 
+				<p>Innovation and me, complete package</p>
 			</div>
-			<div class="col-sm-1"></div>	
+		</div>
+		<div class="row-fluid" style="border: 0px solid white">
+		    <div class="col-md-3  col-sm-6 col-xs-12">
+			    <div class="panel panel-primary">
+			      	<div class="panel-heading">
+			      		<h2 style="font-weight: 900">
+			      			IDEA <span class="glyphicon glyphicon-flag"></span>
+			      		</h2>
+			      		
+			      	</div>
+			      	<div class="panel-body">
+			      		<img class="panel-img-design" src="Images/idea.png" >
+			      	</div>
+			      	<div class="panel-footer">
+			      		<p class="text-justify">
+			      			Idea, is the word that means alot itself, if you have no idea the nothing going to worth. I personally like this line "If you have no idea get idea". And one more implement your idea as faster as you can before some steal your idea, if you like to be big, thing big and make thing possible and big 
+			      		</p>
+			      	</div>
+			    </div>
+		    </div>
+		    <div class="col-md-3 col-sm-6 col-xs-12">
+			    <div class="panel panel-primary">
+			      	<div class="panel-heading">
+						<h2 style="font-weight: 900">
+			      			WEB DEV. <span class="glyphicon glyphicon-flag"></span>
+			      		</h2>
+			      	</div>
+			      	<div class="panel-body">
+			      		<img class="panel-img-design" src="images/resp.png" >
+			      	</div>
+			      	<div class="panel-footer">
+						<p class="text-justify">
+							web Develpoment, i mainly works on frontend designing. I design as per user point of view. Designed the website that should responds to the user's behavior and responsivly fits on any type of devices like mobile etc I believe that a web page have to easy, that user can operate that even eyes are closed 
+						</p>
+			      	</div>
+			    </div>
+		    </div>
+		    <div class="col-md-3 col-sm-6 col-xs-12">
+			    <div class="panel panel-primary">
+			      	<div class="panel-heading">
+			      		<h2 style="font-weight: 900">
+			      			CODE <span class="glyphicon glyphicon-flag"></span>
+			      		</h2>
+			      	</div>
+			      	<div class="panel-body">
+			      		<img class="panel-img-design" src="images/code.png" >
+			      	</div>
+			      	<div class="panel-footer">
+			      		<p class="text-justify">
+			      			I code for make thing possible. for frontend HTML, CSS, Js and Bootstrap. My aim is to make website as easy as "amazon.com" one word for this website its "easy peasy" for any type of user. I also have knowledge of webBuilders like Wordpress, Durpal etc. And i also have knowledge of languages Java etc. 
+			      		</p>
+			      	</div>
+			    </div>
+		    </div>	
+
+		    <div class="col-md-3 col-sm-6 col-xs-12">
+			    <div class="panel panel-primary">
+			      	<div class="panel-heading">
+			      		<h2 style="font-weight: 900">
+			      			DESIGN <span class="glyphicon glyphicon-flag"></span>
+			      		</h2>
+			      	</div>
+			      	<div class="panel-body">
+			      		<img class="panel-img-design" src="images/design.png" >
+			      	</div>
+			      	<div class="panel-footer">
+			      		<p class="text-justify">
+			      			Design is the baseline for every project. I usually free sketch the design, then create the prototype of the same using wireframe. By using Wireframe i design a website service at the structural level, with any codes. wireframe gives feel how its goes in real. After this i concentrate on UI with perfect "Look and Feel".
+			      		</p>
+			      	</div>
+			    </div>
+		    </div>
+
 		</div>
 	</div>
 
-	<!-- get in touch -->
-	<div id="cv" class="container-fluid text-center img-mycontainer" style="padding: 100px 50px;">
-		<div class="row text-center">
-			<div class="col-sm-4 col-xs-0"></div>
-	    	<div class="col-sm-4 col-xs-12">
-				<div class="panel-group">
-	    			<div class="panel panel-default">
-	      				<div class="panel-heading">
-	                    	<h1>
-	                    		Preview Curriculum-Vitae
-	                    	</h1>
-	                    </div>
-	      				<div class="panel-body">
-	                    	<a href="Assets/cv_rjt.pdf" target="parent">
-	                    		<img src="Images/down.png" style="width: 148px; height: 148px">
-	                    	</a>	                 
-	                    </div>
-	                    <div class="panel-footer">
-	                    	<h4>
-	                    		Click on above image to see my curriculum-vitae,
-	                    		it contains my personal details and technical 
-	                    		background information. 	
-	                    	</h4>
-	                    </div>
-	    			</div>
-	  			</div>
-			</div>
-			<div class="col-sm-4 col-xs-0"></div>
-	    </div> 
+	<div class="container">
+		<div class="col-md-12 col-xs-12 rjt-skill-txt">
+			<h3>ABOUT <span>ME</span></h3> 
+			<p style="letter-spacing: 18">ITS ALL ABOUT ME</p>
+		</div>		
 	</div>
-
-	<!-- contact me -->
-	<div id="cont" class="container-fluid" style="height: 96vh; padding-top: 100px;">
-		
-		<div id="contact" class="container-fluid " style="background-color: #EDF5E1">
-			<h2 class="text-center">CONTACT</h2>
-			<div class="row">
-				<div class="col-sm-5">
-					<p>Contact me and I'll get back to you within 24 hours.</p>
-					<p><span class="glyphicon glyphicon-map-marker"></span> New Delhi, India</p>
-					<p><span class="glyphicon glyphicon-phone"></span> +91-97-1633-1648</p>
-					<p><span class="glyphicon glyphicon-envelope"></span> rajatverma1633@gmail.com</p>
-				</div>
-				<div class="col-sm-7 ">
-					<form action="mailTo:rajatverma1633@gmail.com" method="post" enctype="text/plain">	
-						<div class="row">
-							<div class="col-sm-6 form-group">
-								<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-							</div>
-							<div class="col-sm-6 form-group">
-								<input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-							</div>
-						</div>
-						<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-						<div class="row">
-							<div class="col-sm-12 form-group">
-								<button class="btn btn-default pull-right" type="submit">Send</button>
-							</div>
-						</div>
-					</form>		
-				</div>
-			</div>
-		</div>
-
-		<div class="row" style="margin-top: 62px ">
-			<div class="footer-image-container img-responsive"  style="">
-		    	<img class="img-responsive footer-image" src="Images/AbtFooter.png">
-		   	</div>
-	   	</div>
-
-	</div>
-
+  
 </body>
 </html>
