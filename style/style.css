@@ -1,100 +1,135 @@
-/*color scheme used
- * Text-color used : #05386B
- * 
- * Bg-color used : 
- * 				Dark : #379683
- * 				medium : #5CDB95 Green
- * 				light : #8EE4AF
- * 
- * white contrast used : #EDF5E1				
- */
-html *
-{
-   /*font-family: 'Titillium Web', sans-serif !important;*/
+* {
+	box-sizing: border-box;
 }
-body {
-	/*overflow-y:hidden;  */
-	background-color: #5CDB95 !important;
+#res {
+  position: fixed;
+  bottom: -4px;
+  right: 10px;
+  z-index: 9999;
 }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-  }
-.navbar-myDesign{
-	background-color: #05386B;
-	margin-bottom: 0 !important;
-	border-radius: 0 !important;
-	font-size: 18px !important;
-	border-bottom: 1px solid #05386B !important;
+body{
+	margin:0;
+	font-family: 'Roboto', sans-serif; 
+	background-color: #181B27 !important;
+	height: 100%;
+	width: 100%;  
+} 
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-decoration:none;
+	outline:none;
 }
-.collapse a{
-	color: #5CDB95 !important;
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+	font-family: 'Julius Sans One', sans-serif;
+}
+p{
+	margin:0;
+}
+body a:hover{
+	text-decoration:none;
+}
+body a:focus {
+    outline: none;
+	text-decoration:none;
+}
+
+/*my design*/
+.rjt-banner-left{
+	background-color: red;
+	background: url(../images/r22.jpg)no-repeat 0px 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    min-height: 550px;
 
 }
-.collapse a:hover{
-	background-color: #EDF5E1 !important;
-}
-.bars{
-	background-color: white !important;
-}
-.jumbotron{
-	background-color: #5CDB95 !important; 
-	height: 100vh !important;
-}
-.myImgFormate{
-	width: 25%; 
-	height: 25%; 
-	background-color: gray;
-	margin-top: 20px;
-	border: 5px solid #379683;
-}
-.meImgDesign{
-	width: 95%;
-	height: 95%;
-}
-.img-mycontainer{
-	background-color: none;
-	background-image: url('../Images/bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 100% auto;
-/*    opacity: 0.2;
-    filter: alpha(opacity=20);*/ /* For IE8 and earlier */
-    height: 100vh;
-    border: 0px solid black; 
-    margin-top: 0px;
-    padding-top: 0px;
 
+.rjt-banner-left-txt h3 {
+    font-size: 5em;
+    color: #fff;
+    letter-spacing: 3px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	text-shadow: 2px 2px 2px rgba(16, 16, 16, 0.57);
+	font-weight: 900;
 }
-.downArrow{
-	margin-top: 5%; 
-	width: 60px; 
-	height: 60px;
-	animation: bounce 1s;
-
+.rjt-banner-left-txt p {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 3px;
+  	font-family: 'Julius Sans One', sans-serif;
 }
-  .logo-small {
-      color: #f4511e;
-      font-size: 50px;
-  }
-
-.txt-formate{
-	font-size: 19px;
-
+.rjt-banner-left-txt {
+    margin: 13em 0 12em 0;
 }
+
+
+
+.rjt-skill-txt h3 {
+    font-size: 3em;
+    color: #fff;
+    letter-spacing: 3px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	text-shadow: 2px 2px 2px rgba(16, 16, 16, 0.57);
+	font-weight: 900;
+}
+.rjt-skill-txt p {
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 5px;
+  	font-family: 'Julius Sans One', sans-serif;
+}
+.rjt-skill-txt {
+    margin: 2em 0 5em 0;
+}
+
+/*about*/
+.rjt-heading-all h3 {
+    font-size: 2.5em;
+    color: #fff;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 2em 0 0 0;
+	text-align:center;
+}
+.rjt-heading-all span {
+    color: #04b962;
+}
+
+
+
 
 .panel { 
-	border: 1px solid #5CDB95 !important; 
+	border: 0px solid #5CDB95 !important; 
 	transition: box-shadow 0.5s;
 }
 .panel:hover {
-	box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+	box-shadow: 5px 0px 20px #099653;
 }
 .panel-heading ,.panel-footer{
-	background-color: #5CDB95 !important;
+	background-color: #099653 !important; 	
+}
+
+
+.panel-footer{
+	color: white;
+	font-weight: 600;
+	font-size-adjust: 0.60;	
+	overflow: hidden;
+	height: 9.9em;	
 }
 .panel-body{
 	background-color: white !important ;
@@ -104,21 +139,242 @@ body {
 	height: 150px;
 }
 
-/*CSS3 bounce animation*/
+.abt-txt{
+	font-size: 1.5em; 
+	color: white;
+	letter-spacing: 3;
+}
+						
+.abt-first-letter{
+	font-size: 1.8em;
+}
 
- @keyframes bounce {
-	0%, 20%, 60%, 100% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
+.title-diff{
+	color: #099653;
+}
+
+.rjt-seprater{
+	border-bottom: 5px solid #099653;
+	margin-top: 4vh;
+}
+
+/*contact me*/
+.contact-form{
+    width: 70%;
+}
+.contact-form .form-control{
+    border-radius: 1rem;
+}
+.contact-form form{
+    padding: 0%;
+}
+.contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #099653;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
+.form-group input{
+	transition: box-shadow 0.5s;
+	height: 5vh;
+}
+.form-group textarea{
+	height: 18vh !important;
+	transition: box-shadow 0.5s;
+}
+
+.form-group input:hover{
+	box-shadow: 5px 0px 20px #099653;
+}
+.form-group textarea:hover{
+	box-shadow: 5px 0px 20px #099653;
+}
+
+
+
+
+
+/*Responsive*/
+@media(max-width:1480px)
+{
+	.rjt-banner-left {
+	    width: 100%;
+	}
+	.panel-footer{
+		overflow: scroll;
+		font-size-adjust: 0.55;	
 	}
 
-	40% {
-		-webkit-transform: translateY(-20px);
-		transform: translateY(-20px);
+}
+
+@media(max-width:1080px)
+{
+	.rjt-banner-left {
+	    width: 100%;
+	}
+	.panel-footer{
+		overflow: scroll;
+		font-size-adjust: 0.55;	
 	}
 
-	80% {
-		-webkit-transform: translateY(-10px);
-		transform: translateY(-10px);
+}
+
+@media(max-width:991px)
+{
+	.rjt-banner-left-txt {
+	    margin: 0;
+	    padding: 13em 0 10em 0;
 	}
+	.rjt-skill-txt {
+	    margin: 0;
+	    padding: 1em 0 1em 0;
+	}
+	.rjt-heading-all h3 {
+	    margin: 0;
+		padding: 2em 0 0 0;
+	}
+	.panel-footer{
+		color: white;
+		overflow: scroll !important;
+		font-size-adjust: 0.60;	
+	}
+
+}
+
+@media(max-width:768px)
+{
+	.rjt-banner-left {
+	    min-height: 488px;
+	}
+
+	.rjt-banner-left {
+	    background: url(../images/r22.jpg)no-repeat -95px 0px;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    -ms-background-size: cover;
+	    background-size: cover;
+	}
+
+}	
+
+@media(max-width:568px)
+{
+	.rjt-heading-all h3 {
+	    font-size: 2em;
+	}
+
+}
+
+@media(max-width:667px)
+{
+	.rjt-banner-left-txt h3 {
+	    font-size: 4em;
+	}
+	.rjt-banner-left-txt h3 {
+	    font-size: 3em;
+	}	
+	.rjt-skill-txt h3 {
+	    font-size: 4em;
+	}
+	.rjt-skill-txt h3 {
+	    font-size: 2em;
+	}
+	.rjt-banner-left {
+	    background: url(../images/r22.jpg)no-repeat -110px 0px;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    -ms-background-size: cover;
+	    background-size: cover;
+	}
+
+}	
+
+@media(max-width:480px)
+{
+	.rjt-banner-left-txt p {
+	    font-size: 1.2em;
+	}
+	.rjt-skill-txt p {
+	    font-size: 0.8em;
+	}
+	.rjt-banner-left {
+	    background: url(../images/r22.jpg)no-repeat -160px 0px;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    -ms-background-size: cover;
+	    background-size: cover;
+	}
+
+
+}
+
+@media(max-width:384px)
+{
+	.rjt-banner-left-txt h3 {
+	    font-size: 2.5em;
+	}
+	.rjt-banner-left-txt p {
+	    font-size: 1em;
+	}	
+	.rjt-skill-txt h3 {
+	    font-size: 2.4em;
+	}
+	.rjt-skill-txt p {
+	    font-size: 0.8em;
+	}
+
+	.panel-heading h2{
+		font-weight: 700 !important;
+		font-size-adjust: 0.40 !important; 
+		
+	}
+	.panel-img-design{
+		width: 8.5em; 
+		height: 8.5em;
+	}
+	.panel-footer{
+		color: white;
+		overflow: scroll;
+		font-size-adjust: 0.45;	
+	}
+
+	.abt-txt{
+		font-size: 1em; 
+		color: white;
+		letter-spacing: 1;
+	}
+	.abt-first-letter{
+	font-size: 1.6em;
+	}
+
+}
+
+@media(max-width:320px)
+{
+	.rjt-banner-left {
+	    background: url(../images/r22.jpg)no-repeat -200px 0px;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    -ms-background-size: cover;
+	    background-size: cover;
+	}
+
 }
