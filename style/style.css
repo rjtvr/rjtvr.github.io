@@ -114,20 +114,21 @@ body a:focus {
 	border: 0px solid #5CDB95 !important; 
 	transition: box-shadow 0.5s;
 }
+
 .panel:hover {
 	box-shadow: 5px 0px 20px #099653;
 }
+
 .panel-heading ,.panel-footer{
 	background-color: #099653 !important; 	
 }
-
 
 .panel-footer{
 	color: white;
 	font-weight: 600;
 	font-size-adjust: 0.60;	
 	overflow: hidden;
-	height: 9.9em;	
+	height: 11.5em;	
 }
 .panel-body{
 	background-color: white !important ;
@@ -149,6 +150,10 @@ body a:focus {
 
 .title-diff{
 	color: #099653;
+}
+.title-diff:hover{
+	
+
 }
 
 .rjt-seprater{
