@@ -218,7 +218,7 @@ body a:focus {
 	    width: 100%;
 	}
 	.panel-footer{
-		overflow: scroll;
+		overflow: auto;
 		font-size-adjust: 0.55;	
 	}
 
@@ -230,7 +230,7 @@ body a:focus {
 	    width: 100%;
 	}
 	.panel-footer{
-		overflow: scroll;
+		overflow: auto;
 		font-size-adjust: 0.55;	
 	}
 
@@ -252,7 +252,7 @@ body a:focus {
 	}
 	.panel-footer{
 		color: white;
-		overflow: scroll !important;
+		overflow: auto !important;
 		font-size-adjust: 0.60;	
 	}
 
@@ -354,7 +354,7 @@ body a:focus {
 	}
 	.panel-footer{
 		color: white;
-		overflow: scroll;
+		overflow: auto;
 		font-size-adjust: 0.45;	
 	}
 
