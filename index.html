@@ -17,8 +17,13 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<style type="text/css">
-
+		/*internal css*/
 	</style>
+		<script type="text/javascript">
+		$(document).ready(function(){
+    	$('[data-toggle="tooltip"]').tooltip(); 
+		});		
+	</script>
 </head>
 <body>
 
@@ -55,11 +60,13 @@
 		<div class="row">
 			<div class="col-md-12 rjt-banner-left">
 				<div class="rjt-banner-left-txt">
-					<h3>I<span class="title-diff">A</span>M <span class="title-diff">R</span>A<span class="title-diff">J</span>A<span class="title-diff">T</span></h3>
+						<a href="videoBg.html" >
+							<h3>I<span class="title-diff">A</span>M <span class="title-diff">R</span>A<span class="title-diff">J</span>A<span class="title-diff">T</span></h3>
+						</a>	
 					<p>WEB & <br> SOFWARE DEVELOPER <br>
 						<a style="color: white" href="https://github.com/rjtvr">
 							<span class="title-diff glyphicon glyphicon-retweet"></span> Git<span class="title-diff">.</span>rjtvr
-						</a>
+						</a>	
 					</p>
 		        </div>
 				<div class="clearfix"></div>
@@ -225,7 +232,7 @@
 
 		
         <div class="container contact-form">
-            <form method="post"  action="mailto:rajatverma1633@gmail.com?subject=&body=" enctype="text/plain">
+            <form method="post"  action="mailto:rajatverma1633@gmail.com" enctype="text/plain">
                <div class="row">
                     <div class="col-md-6 col-xs-12">
                         <div class="form-group">
@@ -235,7 +242,7 @@
                             <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" required/>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" required/>
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number" value="" />
                         </div>
                    
                     </div>
@@ -245,8 +252,7 @@
                         </div>
                         <div class="form-group ">
                             <input type="submit" name="btnSubmit" class="btnContact" value="Send" />
-				
-                        </div>
+						</div>
                     </div>
                 </div>
             </form>
@@ -263,8 +269,6 @@
   	</div>
 	<!-- FOOTER ENDS HERE -->  	
 
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  		
-  	</script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
