@@ -21,16 +21,37 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 
 	<style type="text/css">
-		/*internal css*/
+		#github-ribbon {
+		    position: fixed;
+		    top: 0;
+		    right: 0;
+		    z-index: 999999999;
+		}
 	</style>
-		<script type="text/javascript">
+	<!-- For bootstrap tooltip -->
+	<script type="text/javascript">
 		$(document).ready(function(){
     	$('[data-toggle="tooltip"]').tooltip(); 
 		});		
 	</script>
+	<script>
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function() {
+		var currentScrollPos = window.pageYOffset;
+		  if (prevScrollpos > currentScrollPos) {
+		    document.getElementById("github-ribbon").style.right = "0";
+		  } else {
+		    document.getElementById("github-ribbon").style.right = "-150px";
+		  }
+		  prevScrollpos = currentScrollPos;
+		}
+	</script>
 </head>
 <body>
 
+	<a id="github-ribbon" href="https://github.com/rjtvr">
+		<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub">
+	</a>
 	<!-- Modal body-->
 	<div class="modal fade" id="myModal" role="dialog">
 	    <div class="modal-dialog">
