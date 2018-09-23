@@ -47,6 +47,7 @@ body a:focus {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+    background-attachment: fixed;
     min-height: 550px;
 
 }
@@ -71,7 +72,7 @@ body a:focus {
 }
 
 .rjt-banner-left-txt {
-    margin: 13em 0 12em 0;
+    margin: 20em 0 25em 0;
 }
 
 
@@ -172,31 +173,22 @@ body a:focus {
     padding: 0%;
 }
 .contact-form .btnContact {
-    width: 50%;
+    width: 15em;
+    height: 3em;
     border: none;
     border-radius: 1rem;
-    padding: 1.5%;
+    padding: 0.5em;
     background: #099653;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
 }
-.btnContactSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    color: #fff;
-    background-color: #0062cc;
-    border: none;
-    cursor: pointer;
-}
 .form-group input{
 	transition: box-shadow 0.5s;
-	height: 5vh;
+	height: 3.5em;
 }
 .form-group textarea{
-	height: 18vh !important;
+	height: 13em !important;
 	transition: box-shadow 0.5s;
 }
 
@@ -365,6 +357,27 @@ body a:focus {
 	}
 	.abt-first-letter{
 	font-size: 1.6em;
+	}
+
+	/*CONTACT*/
+	.contact-form .btnContact {
+    width: 10em;
+    height: 3em;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5em;
+    background: #099653;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+	}
+	.form-group input{
+		transition: box-shadow 0.5s;
+		height: 3em;
+	}
+	.form-group textarea{
+		height: 8em !important;
+		transition: box-shadow 0.5s;
 	}
 
 }
