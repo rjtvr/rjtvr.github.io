@@ -1,6 +1,9 @@
 * {
 	box-sizing: border-box;
 }
+.chk-pos{
+	border: 1px solid black;
+}
 #res {
   position: fixed;
   bottom: -4px;
@@ -96,6 +99,35 @@ body a:focus {
 .rjt-skill-txt {
     margin: 2em 0 5em 0;
 }
+/*skill bar*/
+
+
+.progress {
+  height: 35px !important;
+	transition: box-shadow 0.5s;
+}
+
+.progress:hover{
+	box-shadow: 5px 0px 20px #099653;
+}
+.progress .skill {
+  font: normal 12px !important;
+  line-height: 35px !important;
+  padding: 0 !important;
+  margin: 0 0 0 20px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+.progress .skill .val {
+  float: right !important;
+  font-style: normal !important;
+  margin: 0 20px 0 0 !important;
+}
+
+.progress-bar {
+  text-align: left !important;
+  transition-duration: 3s !important;
+} 
 
 /*about*/
 .rjt-heading-all h3 {
@@ -153,7 +185,6 @@ body a:focus {
 	color: #099653;
 }
 .title-diff:hover{
-	
 
 }
 
