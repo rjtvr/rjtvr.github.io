@@ -103,30 +103,35 @@ body a:focus {
 
 
 .progress {
-  height: 35px !important;
+	background-color: #181B27 !important; 
+	border: 1px solid #74C374;
+	height: 35px !important;
 	transition: box-shadow 0.5s;
 }
-
+.key-langname{
+	color: white !important;
+}
 .progress:hover{
 	box-shadow: 5px 0px 20px #099653;
 }
 .progress .skill {
-  font: normal 12px !important;
-  line-height: 35px !important;
-  padding: 0 !important;
-  margin: 0 0 0 20px !important;
-  font-weight: 900 !important;
-  text-transform: uppercase !important;
+  	font: normal 12px !important;
+	line-height: 35px !important;
+	padding: 0 !important;
+  	margin: 0 0 0 20px !important;
+	text-transform: uppercase !important;
 }
 .progress .skill .val {
-  float: right !important;
-  font-style: normal !important;
-  margin: 0 20px 0 0 !important;
+	float: right !important;
+  	font-style: normal !important;
+  	margin: 0 20px 0 0 !important;
 }
 
 .progress-bar {
-  text-align: left !important;
-  transition-duration: 3s !important;
+	text-align: left !important;
+  	transition-duration: 3s !important;
+}
+.progress-bar-success{
 } 
 
 /*about*/
