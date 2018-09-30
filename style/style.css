@@ -43,7 +43,6 @@ body a:focus {
 
 /*my design*/
 .rjt-banner-left{
-	background-color: red;
 	background: url(../images/r22.jpg)no-repeat 0px 0px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -52,7 +51,7 @@ body a:focus {
     background-size: cover;
     background-attachment: fixed;
     min-height: 550px;
-
+    height: 100vh;
 }
 
 .rjt-banner-left-txt h3 {
@@ -421,7 +420,7 @@ body a:focus {
 @media(max-width:320px)
 {
 	.rjt-banner-left {
-	    background: url(../images/r22.jpg)no-repeat -200px 0px;
+	    background: url(../images/r22.jpg)no-repeat -230px 0px;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
