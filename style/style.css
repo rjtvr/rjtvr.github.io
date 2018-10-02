@@ -1,6 +1,9 @@
 * {
 	box-sizing: border-box;
 }
+.chk-pos{
+	border: 1px solid black;
+}
 #res {
   position: fixed;
   bottom: -4px;
@@ -40,7 +43,6 @@ body a:focus {
 
 /*my design*/
 .rjt-banner-left{
-	background-color: red;
 	background: url(../images/r22.jpg)no-repeat 0px 0px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -49,7 +51,7 @@ body a:focus {
     background-size: cover;
     background-attachment: fixed;
     min-height: 550px;
-
+    height: 100vh;
 }
 
 .rjt-banner-left-txt h3 {
@@ -96,6 +98,40 @@ body a:focus {
 .rjt-skill-txt {
     margin: 2em 0 5em 0;
 }
+/*skill bar*/
+
+
+.progress {
+	background-color: #181B27 !important; 
+	border: 1px solid #74C374;
+	height: 35px !important;
+	transition: box-shadow 0.5s;
+}
+.key-langname{
+	color: white !important;
+}
+.progress:hover{
+	box-shadow: 5px 0px 20px #099653;
+}
+.progress .skill {
+  	font: normal 12px !important;
+	line-height: 35px !important;
+	padding: 0 !important;
+  	margin: 0 0 0 20px !important;
+	text-transform: uppercase !important;
+}
+.progress .skill .val {
+	float: right !important;
+  	font-style: normal !important;
+  	margin: 0 20px 0 0 !important;
+}
+
+.progress-bar {
+	text-align: left !important;
+  	transition-duration: 3s !important;
+}
+.progress-bar-success{
+} 
 
 /*about*/
 .rjt-heading-all h3 {
@@ -153,7 +189,6 @@ body a:focus {
 	color: #099653;
 }
 .title-diff:hover{
-	
 
 }
 
@@ -163,6 +198,18 @@ body a:focus {
 }
 
 /*contact me*/
+.contact-links{
+	color: #181B27;
+	background-color: #099653;
+	width: 15em;
+	border-radius: 1em;
+	transition: 1s all ease-out;
+}
+.contact-links:hover{
+	/*background-color: red;*/
+    background-image: linear-gradient(to right, #FFFFFF, #099653, #FFFFFF); /* Standard syntax (must be last) */
+    box-shadow: 2px 3px 10px #099653;
+}
 .contact-form{
     width: 70%;
 }
@@ -385,7 +432,7 @@ body a:focus {
 @media(max-width:320px)
 {
 	.rjt-banner-left {
-	    background: url(../images/r22.jpg)no-repeat -200px 0px;
+	    background: url(../images/r22.jpg)no-repeat -230px 0px;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
