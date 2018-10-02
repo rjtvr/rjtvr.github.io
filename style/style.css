@@ -198,6 +198,18 @@ body a:focus {
 }
 
 /*contact me*/
+.contact-links{
+	color: #181B27;
+	background-color: #099653;
+	width: 15em;
+	border-radius: 1em;
+	transition: 1s all ease-out;
+}
+.contact-links:hover{
+	/*background-color: red;*/
+    background-image: linear-gradient(to right, #FFFFFF, #099653, #FFFFFF); /* Standard syntax (must be last) */
+    box-shadow: 2px 3px 10px #099653;
+}
 .contact-form{
     width: 70%;
 }
