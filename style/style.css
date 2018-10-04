@@ -77,7 +77,6 @@ body a:focus {
     margin: 20em 0 25em 0;
 }
 
-
 .rjt-skill-txt h3 {
     font-size: 3em;
     color: #fff;
@@ -246,9 +245,49 @@ body a:focus {
 	box-shadow: 5px 0px 20px #099653;
 }
 
+/*for buy me a coffee*/
 
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
 
+.overlay-body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
 
+.overlay-body img{
+	width: 6em;
+	height: 1.25em;
+	transition: 0.5s all ease-out;
+	border-radius: 0.2em;	
+}
+.overlay-body img:hover{
+	box-shadow: 5px 5px 50px #FF7745;
+}
+
+.buy-btn{
+	background-color: #099653;
+	color : #FFFFFF;
+}
+.buy-btn:hover{
+	color: #181B27 !important;
+}
 
 /*Responsive*/
 @media(max-width:1480px)
@@ -404,20 +443,20 @@ body a:focus {
 		letter-spacing: 1;
 	}
 	.abt-first-letter{
-	font-size: 1.6em;
+		font-size: 1.6em;
 	}
 
 	/*CONTACT*/
 	.contact-form .btnContact {
-    width: 10em;
-    height: 3em;
-    border: none;
-    border-radius: 1rem;
-    padding: 0.5em;
-    background: #099653;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
+	    width: 10em;
+	    height: 3em;
+	    border: none;
+	    border-radius: 1rem;
+	    padding: 0.5em;
+	    background: #099653;
+	    font-weight: 600;
+	    color: #fff;
+	    cursor: pointer;
 	}
 	.form-group input{
 		transition: box-shadow 0.5s;
@@ -439,6 +478,7 @@ body a:focus {
 	    -o-background-size: cover;
 	    -ms-background-size: cover;
 	    background-size: cover;
+	    height: 100vh;
 
 	}
 

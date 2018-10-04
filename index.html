@@ -29,26 +29,12 @@
 		    z-index: 999999999;
 		}
 	</style>
-	<!-- For bootstrap tooltip -->
-<!-- 	<script type="text/javascript">
-		$(document).ready(function(){
-    	$('[data-toggle="tooltip"]').tooltip(); 
-		});		
-	</script> -->
-	<script>
-		var prevScrollpos = window.pageYOffset;
-		window.onscroll = function() {
-		var currentScrollPos = window.pageYOffset;
-		  if (prevScrollpos > currentScrollPos) {
-		    document.getElementById("github-ribbon").style.right = "0";
-		  } else {
-		    document.getElementById("github-ribbon").style.right = "-150px";
-		  }
-		  prevScrollpos = currentScrollPos;
-		}
-	</script>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
+		// For bootstrap tooltip starts here	
+		$('[data-toggle="tooltip"]').tooltip(); 	
+		// For bootstrap tooltip ends here
       	$('.progress .progress-bar').css("width",
             function() {
         		return $(this).attr("aria-valuenow") + "%";
@@ -58,11 +44,13 @@
 	</script>
 </head>
 <body>
-
+	<!-- Fork me tag starts here -->
 	<a id="github-ribbon" class="hidden-xs" href="https://github.com/rjtvr">
 		<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub">
 	</a>
-	<!-- Modal body-->
+	<!-- Fork me tag ends here -->
+	
+	<!-- Modal for cv-->
 	<div class="modal fade" id="myModal" role="dialog">
 	    <div class="modal-dialog">
 	        <!-- Modal content-->
@@ -87,21 +75,45 @@
 	      	</div>
 	    </div>
 	</div>
+	<!-- Modal body ends here -->
+	
+	<!-- CV button fixed -->
 	<div id="res">
 		<button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click me! 4 CV</button>
 	</div>
+	<!-- CV button Ends up here -->
+
+	<!-- Buy me a coffee starts here -->
+	<div id="overlay" onclick="off()">
+	 	<div class="overlay-body">
+	 		<a href="https://paypal.me/rjtvr" target="parent" data-placement="top" data-toggle="tooltip" title="EVEN 0.99 WORKS FOR ME">
+	  			<img class="" src="Images/btn.png">
+	  		</a>
+	  		<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- Buy me a coffee ends here -->
+	
 	<!-- HEADBAR STARTS HERE -->
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12 rjt-banner-left">
 				<div class="rjt-banner-left-txt">
-						<a href="videoBg.html" >
-							<h3>I<span class="title-diff">A</span>M <span class="title-diff">R</span>A<span class="title-diff">J</span>A<span class="title-diff">T</span></h3>
-						</a>	
-						<p>WEB & <br> SOFWARE DEVELOPER <br>
+					<a href="videoBg.html" >
+						<h3>I<span class="title-diff">A</span>M <span class="title-diff">R</span>A<span class="title-diff">J</span>A<span class="title-diff">T</span></h3>
+					</a>	
+					<p>WEB & <br> SOFWARE DEVELOPER <br>
 						<a style="color: white" href="https://github.com/rjtvr">
 							<span class="title-diff glyphicon glyphicon-retweet"></span> Git<span class="title-diff">.</span>rjtvr
-						</a>	
+						</a>
+						<div class="clearfix"></div>
+						<div class="visible-lg">
+							<center>
+								<button type="button" class="btn buy-btn" onclick="on()" data-html="true" data-placement="bottom" data-toggle="tooltip" title="<b>I DARE YOU</b>">				
+									CLICK ME!
+								</button>
+							</center>
+						</div>		
 					</p>
 		        </div>
 				<div class="clearfix"></div>
@@ -368,14 +380,14 @@
   	<!-- CONTACT ME SECTION ENDS HERE -->
  	<br>
   	<br>
-  	<!-- FOOTER STARTS HERE -->
+	<!-- FOOTER STARTS HERE -->
   	<div class="container text-center" >
   		<p style="color: white; font-weight: 800; letter-spacing: 7px; ">
   			MADE BY ME <span class="title-diff"> | </span> DESIGNED BY ME 2<span class="title-diff">0</span>18
   		</p>
   	</div>
 	<!-- FOOTER ENDS HERE -->  	
-
+	<br>
   
 </body>
 </html>
