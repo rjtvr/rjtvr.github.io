@@ -79,13 +79,16 @@ body a:focus {
 
 /*navbar hover on a*/
 li a{
- 	color: white !important;
+ 	color: #181B27 !important;
  	font-size-adjust: 0.7;
-  	font-variant-caps: petite-caps;
+  	/*font-variant-caps: petite-caps;*/
+  	text-transform: uppercase;
+  	font-weight: 600;
   	transition: 1s all ease-in;
 }
 li a:hover{
 	background-color: #181B27 !important;
+	color: #099653 !important;
 }
 .navbar-nav {
     width: 100%;
@@ -102,6 +105,9 @@ li a:hover{
 	border-right-width: 0px !important;
 	border-bottom-width: 0px !important; 
 	box-shadow: 0 8px 6px -6px #000000;
+}
+.side-border{
+	border-right: 1px solid #181B27 !important;
 }
 /*navbar hover on a*/
 
@@ -327,7 +333,9 @@ li a:hover{
 		overflow: auto;
 		font-size-adjust: 0.55;	
 	}
-
+	.side-border{
+		border-right: 0px solid transparent !important;
+	}
 }
 
 @media(max-width:1080px)
