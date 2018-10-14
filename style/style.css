@@ -84,7 +84,7 @@ li a{
   	/*font-variant-caps: petite-caps;*/
   	text-transform: uppercase;
   	font-weight: 600;
-  	transition: 1s all ease-in;
+  	transition: 0.5s all ease-in;
 }
 li a:hover{
 	background-color: #181B27 !important;
@@ -104,10 +104,10 @@ li a:hover{
 	border-left-width: 0px !important;
 	border-right-width: 0px !important;
 	border-bottom-width: 0px !important; 
-	box-shadow: 0 8px 6px -6px #000000;
+	box-shadow: 500px 8px 80px -6px #099653;
 }
 .side-border{
-	border-right: 1px solid #181B27 !important;
+	border-right: 0px solid #181B27 !important;
 }
 /*navbar hover on a*/
 
