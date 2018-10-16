@@ -454,6 +454,16 @@ li a:hover{
 
 @media(max-width:384px)
 {
+	.rjt-banner-left {
+	    background: url(../images/r22.jpg)no-repeat -300px 0px;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    -ms-background-size: cover;
+	    background-size: cover;
+	    height: 100vh;
+
+	}
 	.rjt-banner-left-txt h3 {
 	    font-size: 2.5em;
 	}
