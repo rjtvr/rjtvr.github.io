@@ -379,7 +379,8 @@ li a:hover{
 	}
 
 	.rjt-banner-left {
-	    background: url(../images/r22.jpg)no-repeat -95px 0px;
+	    /*background: url(../images/r22.jpg)no-repeat -95px 0px;*/
+	    background: url(../images/r22.jpg)no-repeat 0px 0px;	    
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
@@ -455,7 +456,8 @@ li a:hover{
 @media(max-width:384px)
 {
 	.rjt-banner-left {
-	    background: url(../images/r22.jpg)no-repeat -300px 0px;
+	    /*background: url(../images/r22.jpg)no-repeat -300px 0px;*/
+	    background: url(../images/r22.jpg)no-repeat -290px 0px;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
@@ -527,7 +529,8 @@ li a:hover{
 @media(max-width:320px)
 {
 	.rjt-banner-left {
-	    background: url(../images/r22.jpg)no-repeat -230px 0px;
+	    /*background: url(../images/r22.jpg)no-repeat -230px 0px;*/
+	    background: url(../images/r22.jpg)no-repeat -159px 0px;
 	    -webkit-background-size: cover;
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
