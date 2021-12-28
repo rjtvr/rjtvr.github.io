@@ -6,10 +6,13 @@
   font-family: 'Bonheur Royale', cursive;
   color: #3C4A85 ;
 }
-.txt-style{
-  /* font-family: 'Montserrat', sans-serif;   */
+.font-mon{
   font: 19px/23px 'Montserrat', sans-serif;  
 }
+.para{
+  font-weight: 300 !important;
+}
+
 .wave-hand{
   -webkit-animation-duration: 1.8s;
   animation-duration: 1.8s;
