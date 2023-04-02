@@ -200,3 +200,24 @@ body {
   width: 80%;
   max-width: 978px;
 }
+
+.separator {
+  display: flex;
+  align-items: center;
+}
+
+.separator .line {
+  flex: 1;
+  height: 3px;
+  margin: 0 20px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    var(--rt-primary),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.separator h2 {
+  padding: 0 2rem;
+}
