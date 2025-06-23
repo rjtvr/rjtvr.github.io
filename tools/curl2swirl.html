@@ -357,16 +357,16 @@
 
     async function runSelfTest() {
       if (!location.search.includes("test=true")) return;
-
+  
       const testBox = document.getElementById("testStatus");
       testBox.style.display = "block";
-      testBox.textContent = "Running self-test...";
+      testBox.textContent = "🔄 Running self-test...";
       testBox.className = "";
-
+  
       console.groupCollapsed("🔍 Self-Test: Curl URL Checker");
-
+  
       let passed = 0, failed = 0;
-
+  
       async function assertFetch(url, expectedStatus, label) {
         try {
           const res = await fetch(url);
@@ -378,7 +378,7 @@
           failed++;
         }
       }
-
+  
       async function assertPost(url, expected, body = {}) {
         try {
           const res = await fetch(url, {
@@ -387,32 +387,34 @@
             body: JSON.stringify(body)
           });
           const ok = res.status === expected;
-          console[ok ? "log" : "error"](`${ok ? "✅" : "❌"} POST Test: got ${res.status}`);
+          console[ok ? "log" : "error"](`${ok ? "✅" : "❌"} POST: got ${res.status}`);
           ok ? passed++ : failed++;
         } catch {
-          console.error("❌ POST Test: Network error");
+          console.error("❌ POST: Network error");
           failed++;
         }
       }
-
+  
       const tests = [
         assertFetch("https://httpstat.us/200", 200, "GET 200"),
         assertFetch("https://httpstat.us/404", 404, "GET 404"),
         assertFetch("https://httpstat.us/500", 500, "GET 500"),
-        assertFetch("invalid-url", 0, "Invalid URL"),
+        assertFetch("https://httpstat.us/400", 400, "GET 400"), // ✅ replaces `invalid-url`
         assertPost("https://httpbin.org/post", 200, { test: "yes" }),
       ];
-
+  
       await Promise.allSettled(tests);
-
+  
       const summary = `Passed ${passed}, Failed ${failed}`;
-      testBox.textContent = failed === 0 ? `✅ Self-Test Passed (${summary})` : `❌ Self-Test Failed (${summary})`;
+      testBox.textContent = failed === 0
+        ? `✅ Self-Test Passed (${summary})`
+        : `❌ Self-Test Failed (${summary})`;
       testBox.className = failed === 0 ? "test-pass" : "test-fail";
-
+  
       console.log(`Self-Test Summary: ${summary}`);
       console.groupEnd();
     }
-
+  
     window.addEventListener("load", runSelfTest);
   </script>
 </body>
