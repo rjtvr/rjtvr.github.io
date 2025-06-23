@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curl URL Status Checker</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    textarea { width: 100%; font-family: monospace; }
+    button { padding: 10px 20px; margin: 10px 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    .success { color: green; }
+    .fail { color: red; }
+    .error { color: orange; }
+
+    .options, .headers-ui { margin: 10px 0; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start; }
+    .options label, .headers-ui label { margin-right: 5px; }
+    .options input[type="number"], .options select { padding: 2px 6px; }
+    .headers-ui textarea { height: 100px; }
+
+    #loading {
+      display: none;
+      margin: 20px 0;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 3px solid #ccc;
+      border-top: 3px solid #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #progressContainer {
+      width: 100%;
+      background: #eee;
+      border: 1px solid #ccc;
+      height: 20px;
+      margin-top: 10px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: none;
+    }
+
+    #progressBar {
+      height: 100%;
+      background: dodgerblue;
+      width: 0%;
+      transition: width 0.2s;
+    }
+
+    #requestBodyContainer {
+      display: none;
+      margin-top: 10px;
+    }
+
+    #testStatus {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #222;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      z-index: 9999;
+      display: none;
+    }
+
+    .test-pass { background-color: green; }
+    .test-fail { background-color: red; }
+  </style>
+</head>
+<body>
+  <h1>Curl URL Status Checker</h1>
+
+  <div id="testStatus"></div>
+
+  <textarea id="urlInput" placeholder="Enter one curl or plain URL per line..." style="height: 150px;"></textarea>
+
+  <div class="options">
+    <label><input type="checkbox" id="limitConcurrency" /> Limit concurrency</label>
+    <label>Max parallel: <input type="number" id="maxConcurrent" value="5" min="1" /></label>
+    <label>Delay (ms): 
+      <select id="delaySelect">
+        <option value="0">None</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+        <option value="700">700</option>
+        <option value="800">800</option>
+        <option value="900">900</option>
+        <option value="1000">1000</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="options">
+    <label>
+      <input type="checkbox" id="enableCustomOptions" onchange="toggleCustomOptions()" />
+      Enable custom method & headers
+    </label>
+  </div>
+
+  <div id="customOptionsSection" style="display: none;">
+    <div class="options">
+      <label>Method:
+        <select id="httpMethod" onchange="toggleBodyEditor()">
+          <option>GET</option>
+          <option>POST</option>
+          <option>PUT</option>
+          <option>PATCH</option>
+          <option>DELETE</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="headers-ui">
+      <label><input type="radio" name="headerFormat" value="json" checked /> Headers as JSON</label>
+      <label><input type="radio" name="headerFormat" value="lines" /> Headers as lines</label>
+      <textarea id="headersInput" placeholder='{"Authorization": "Bearer token"}'></textarea>
+    </div>
+
+    <div id="requestBodyContainer">
+      <label>Request Body (JSON):</label>
+      <textarea id="requestBody" placeholder='{"name": "John"}'></textarea>
+    </div>
+  </div>
+
+  <button id="checkBtn" onclick="checkUrls()">Check Status</button>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>Checking URLs...</span>
+  </div>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <table id="resultTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Original Input</th>
+        <th>Resolved URL</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="resultBody"></tbody>
+  </table>
+
+  <script>
+    function toggleCustomOptions() {
+      const enabled = document.getElementById('enableCustomOptions').checked;
+      document.getElementById('customOptionsSection').style.display = enabled ? 'block' : 'none';
+      toggleBodyEditor();
+    }
+
+    function toggleBodyEditor() {
+      const method = document.getElementById('httpMethod').value;
+      const bodyContainer = document.getElementById('requestBodyContainer');
+      bodyContainer.style.display = ['POST', 'PUT', 'PATCH'].includes(method) ? 'block' : 'none';
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function extractUrl(raw) {
+      const trimmed = raw.trim();
+      const curlMatch = trimmed.match(/^curl\s+(.*)/i);
+      const url = curlMatch ? curlMatch[1] : trimmed;
+      try {
+        const cleanUrl = url.replace(/['"]/g, '');
+        new URL(cleanUrl);
+        return cleanUrl;
+      } catch {
+        return null;
+      }
+    }
+
+    function updateProgress(current, total) {
+      const progressBar = document.getElementById('progressBar');
+      const percent = Math.round((current / total) * 100);
+      progressBar.style.width = percent + '%';
+    }
+
+    function renderRow(result) {
+      const resultBody = document.getElementById('resultBody');
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${result.index}</td>
+        <td>${result.original}</td>
+        <td>${result.url}</td>
+        <td class="${result.class}">${result.status}</td>
+      `;
+      resultBody.appendChild(row);
+    }
+
+    function parseHeaders() {
+      const mode = document.querySelector('input[name="headerFormat"]:checked').value;
+      const input = document.getElementById('headersInput').value.trim();
+      const headers = {};
+      if (!input) return headers;
+
+      try {
+        if (mode === 'json') {
+          return JSON.parse(input);
+        } else {
+          const lines = input.split('\n');
+          for (const line of lines) {
+            const [key, ...rest] = line.split(':');
+            if (key && rest.length > 0) headers[key.trim()] = rest.join(':').trim();
+          }
+        }
+      } catch (err) {
+        alert("Invalid headers input");
+      }
+      return headers;
+    }
+
+    function parseBody() {
+      const bodyRaw = document.getElementById('requestBody').value.trim();
+      if (!bodyRaw) return undefined;
+      try {
+        return JSON.stringify(JSON.parse(bodyRaw));
+      } catch {
+        alert("Invalid request body (not valid JSON)");
+        return undefined;
+      }
+    }
+
+    async function fetchUrl(index, line, delay, method, headers, body, onComplete) {
+      const resolvedUrl = extractUrl(line);
+      let result;
+
+      if (!resolvedUrl) {
+        result = {
+          index,
+          original: line,
+          url: 'N/A',
+          status: 'Invalid URL format',
+          class: 'error'
+        };
+      } else {
+        try {
+          const config = { method, headers };
+          if (body !== undefined && ['POST', 'PUT', 'PATCH'].includes(method)) {
+            config.body = body;
+          }
+          const res = await fetch(resolvedUrl, config);
+          result = {
+            index,
+            original: line,
+            url: resolvedUrl,
+            status: res.ok ? 'Success' : `Failed (${res.status})`,
+            class: res.ok ? 'success' : 'fail'
+          };
+        } catch {
+          result = {
+            index,
+            original: line,
+            url: resolvedUrl,
+            status: 'Failed (Network error)',
+            class: 'fail'
+          };
+        }
+      }
+
+      if (delay > 0) await sleep(delay);
+      renderRow(result);
+      onComplete();
+    }
+
+    async function runConcurrentBatches(lines, concurrency, delay, method, headers, body, onComplete) {
+      let index = 0;
+      async function worker() {
+        while (index < lines.length) {
+          const current = index++;
+          await fetchUrl(current + 1, lines[current], delay, method, headers, body, onComplete);
+        }
+      }
+      const workers = Array.from({ length: concurrency }, () => worker());
+      await Promise.all(workers);
+    }
+
+    async function checkUrls() {
+      const input = document.getElementById('urlInput').value.trim();
+      const resultTable = document.getElementById('resultTable');
+      const resultBody = document.getElementById('resultBody');
+      const loading = document.getElementById('loading');
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.getElementById('progressContainer');
+      const checkBtn = document.getElementById('checkBtn');
+
+      const limitConcurrency = document.getElementById('limitConcurrency').checked;
+      const maxConcurrent = parseInt(document.getElementById('maxConcurrent').value, 10) || 5;
+      const delay = parseInt(document.getElementById('delaySelect').value, 10) || 0;
+
+      let method = 'GET';
+      let headers = {};
+      let body;
+      const enableCustom = document.getElementById('enableCustomOptions').checked;
+      if (enableCustom) {
+        method = document.getElementById('httpMethod').value;
+        headers = parseHeaders();
+        if (['POST', 'PUT', 'PATCH'].includes(method)) {
+          body = parseBody();
+          if (body === undefined) return;
+        }
+      }
+
+      resultBody.innerHTML = '';
+      resultTable.style.display = 'table';
+      loading.style.display = 'flex';
+      progressContainer.style.display = 'block';
+      progressBar.style.width = '0%';
+      checkBtn.disabled = true;
+
+      if (!input) {
+        alert("Please enter at least one URL.");
+        loading.style.display = 'none';
+        progressContainer.style.display = 'none';
+        checkBtn.disabled = false;
+        return;
+      }
+
+      const lines = input.split('\n').filter(line => line.trim() !== '');
+      let completed = 0;
+      const onComplete = () => updateProgress(++completed, lines.length);
+
+      if (limitConcurrency) {
+        await runConcurrentBatches(lines, maxConcurrent, delay, method, headers, body, onComplete);
+      } else {
+        await Promise.all(lines.map((line, i) =>
+          fetchUrl(i + 1, line, delay, method, headers, body, onComplete)
+        ));
+      }
+
+      loading.style.display = 'none';
+      checkBtn.disabled = false;
+    }
+
+    async function runSelfTest() {
+      if (!location.search.includes("test=true")) return;
+
+      const testBox = document.getElementById("testStatus");
+      testBox.style.display = "block";
+      testBox.textContent = "Running self-test...";
+      testBox.className = "";
+
+      console.groupCollapsed("🔍 Self-Test: Curl URL Checker");
+
+      let passed = 0, failed = 0;
+
+      async function assertFetch(url, expectedStatus, label) {
+        try {
+          const res = await fetch(url);
+          const ok = res.status === expectedStatus;
+          console[ok ? "log" : "error"](`${ok ? "✅" : "❌"} ${label}: got ${res.status}`);
+          ok ? passed++ : failed++;
+        } catch {
+          console.error(`❌ ${label}: Network error`);
+          failed++;
+        }
+      }
+
+      async function assertPost(url, expected, body = {}) {
+        try {
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json", "X-Test": "self-test" },
+            body: JSON.stringify(body)
+          });
+          const ok = res.status === expected;
+          console[ok ? "log" : "error"](`${ok ? "✅" : "❌"} POST Test: got ${res.status}`);
+          ok ? passed++ : failed++;
+        } catch {
+          console.error("❌ POST Test: Network error");
+          failed++;
+        }
+      }
+
+      const tests = [
+        assertFetch("https://httpstat.us/200", 200, "GET 200"),
+        assertFetch("https://httpstat.us/404", 404, "GET 404"),
+        assertFetch("https://httpstat.us/500", 500, "GET 500"),
+        assertFetch("invalid-url", 0, "Invalid URL"),
+        assertPost("https://httpbin.org/post", 200, { test: "yes" }),
+      ];
+
+      await Promise.allSettled(tests);
+
+      const summary = `Passed ${passed}, Failed ${failed}`;
+      testBox.textContent = failed === 0 ? `✅ Self-Test Passed (${summary})` : `❌ Self-Test Failed (${summary})`;
+      testBox.className = failed === 0 ? "test-pass" : "test-fail";
+
+      console.log(`Self-Test Summary: ${summary}`);
+      console.groupEnd();
+    }
+
+    window.addEventListener("load", runSelfTest);
+  </script>
+</body>
+</html>
