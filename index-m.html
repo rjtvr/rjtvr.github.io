@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajat Verma | Frontend Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .fade-slide {
+      will-change: transform, opacity;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-slide.show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    .fade-slide[data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="text-center p-6 fade-slide">
+    <h1 class="text-3xl font-bold">Rajat Verma</h1>
+    <p class="text-sm text-gray-500">Frontend Developer | HTML | CSS | JS | React</p>
+    <p class="mt-2 text-sm">📍 New Delhi | 📧 rajatverma1963@gmail.com</p>
+  </header>
+
+  <section class="px-6 pb-10 fade-slide">
+    <h2 class="text-xl font-semibold mb-2 border-b border-gray-200 pb-1">About</h2>
+    <p class="text-sm leading-relaxed">
+      Tech-savvy frontend developer with 3+ years of experience creating responsive, intuitive web apps using modern tech like React, Tailwind CSS, and JavaScript. Passionate about performance, design, and clean UI/UX.
+    </p>
+  </section>
+
+  <section class="px-6 pb-10 fade-slide">
+    <h2 class="text-xl font-semibold mb-2 border-b border-gray-200 pb-1">Experience</h2>
+    <div class="text-sm mb-4">
+      <p class="font-semibold">Innostax Software Labs — Software Developer</p>
+      <p class="text-xs text-gray-500">Jan 2022 – Present</p>
+      <ul class="list-disc ml-5 mt-1">
+        <li>Built and maintained modern frontend solutions</li>
+        <li>Collaborated closely with backend teams for integration</li>
+        <li>Improved performance and UX with responsive designs</li>
+      </ul>
+    </div>
+    <div class="text-sm">
+      <p class="font-semibold">WorkFlux Interactive — Frontend Intern</p>
+      <p class="text-xs text-gray-500">Dec 2018 – Nov 2019</p>
+    </div>
+  </section>
+
+  <section class="px-6 pb-10 fade-slide">
+    <h2 class="text-xl font-semibold mb-2 border-b border-gray-200 pb-1">Skills</h2>
+    <ul class="space-y-4 text-sm">
+      <li class="flex justify-between items-center">
+        <span>HTML</span>
+        <span class="text-yellow-400">★★★★★</span>
+      </li>
+      <li class="flex justify-between items-center">
+        <span>CSS (Tailwind, Bootstrap)</span>
+        <span class="text-yellow-400">★★★★☆</span>
+      </li>
+      <li class="flex justify-between items-center">
+        <span>JavaScript</span>
+        <span class="text-yellow-400">★★★★★</span>
+      </li>
+      <li class="flex justify-between items-center">
+        <span>React</span>
+        <span class="text-yellow-400">★★★★☆</span>
+      </li>
+      <li class="flex justify-between items-center">
+        <span>Angular</span>
+        <span class="text-yellow-400">★★★☆☆</span>
+      </li>
+      <li class="flex justify-between items-center">
+        <span>Java</span>
+        <span class="text-yellow-400">★★★☆☆</span>
+      </li>
+      <li class="flex justify-between items-center">
+        <span>SQL</span>
+        <span class="text-yellow-400">★★★★☆</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="px-6 pb-10 fade-slide">
+    <h2 class="text-xl font-semibold mb-2 border-b border-gray-200 pb-1">Projects</h2>
+    <ul class="space-y-3 text-sm">
+      <li>
+        <a href="https://github.com/rjtvr/url-checker" target="_blank" class="block p-3 rounded-md border hover:shadow-md transition">
+          🔗 <span class="font-medium">URL Checker Tool</span><br />
+          <span class="text-gray-500 text-xs">Multi-URL tester with concurrency, headers & payload support</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/rjtvr/ocr-scanner" target="_blank" class="block p-3 rounded-md border hover:shadow-md transition">
+          🔗 <span class="font-medium">OCR Scanner</span><br />
+          <span class="text-gray-500 text-xs">Fast, accurate OCR tool built from scratch</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://rjtvr.dev/qr-pay" target="_blank" class="block p-3 rounded-md border hover:shadow-md transition">
+          🔗 <span class="font-medium">QR Payment Webpage</span><br />
+          <span class="text-gray-500 text-xs">Supports LankaQR and Alipay with dynamic QR display</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="text-center text-xs text-gray-500 pb-6 fade-slide">
+    © 2025 Rajat Verma. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".fade-slide");
+
+      const show = el => el.classList.add("show");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              show(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        elements.forEach(el => {
+          el.dataset.animate = "true";
+          observer.observe(el);
+        });
+      } else {
+        elements.forEach(show);
+      }
+    });
+  </script>
+</body>
+</html>
