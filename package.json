@@ -1,0 +1,42 @@
+{
+  "name": "fullstack-nextjs-express",
+  "version": "1.0.0",
+  "description": "Full-stack application with Next.js, TypeScript, Tailwind CSS, and Express.js",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up",
+    "docker:up:build": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "docker:dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build",
+    "docker:logs": "docker-compose logs -f",
+    "clean": "npm run clean:backend && npm run clean:frontend",
+    "clean:frontend": "cd frontend && rm -rf .next node_modules",
+    "clean:backend": "cd backend && rm -rf dist node_modules",
+    "install:all": "npm install && npm run install:frontend && npm run install:backend",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "nextjs",
+    "express",
+    "typescript",
+    "tailwindcss",
+    "docker",
+    "fullstack"
+  ],
+  "author": "",
+  "license": "ISC"
+}
