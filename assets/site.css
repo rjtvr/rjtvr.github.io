@@ -1008,11 +1008,13 @@ a.button.primary:hover {
     border-top: 0;
   }
 
+  /* 20px border-box square centred on the 4px line: line centre sits 24px
+     left of the item, so left = -(24 + 20 / 2). */
   .quests li::before {
-    top: 2px;
+    top: 1px;
     left: -34px;
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
   }
 
   .quests .meta {
