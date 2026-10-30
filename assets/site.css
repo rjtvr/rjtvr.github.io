@@ -723,6 +723,44 @@ a.button.primary:hover {
   }
 }
 
+/* ---------- 404: Lost in the Woods ---------- */
+
+.card.note.lost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 40px 28px 32px;
+  text-align: center;
+}
+
+/* Pixel-drawn "404" (5x7 glyphs, 8px per art pixel), like the stat numbers. */
+.lost-code {
+  width: 136px;
+  height: auto;
+  color: var(--accent);
+}
+
+.lost h1 {
+  margin: 24px 0 0;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.lost .prose {
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+
+.lost .hstack {
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
 /* ---------- Splash screen (home, once per session) ----------
    The <head> script adds .show-splash; the end-of-body script removes it
    after 5s or on any tap/key. Timeline: bar fills 0.3-4.5s, fade 4.6-5s. */
@@ -1289,6 +1327,29 @@ a.button.primary:hover {
 
   .stat span {
     font-size: 9px;
+  }
+
+  .card.note.lost {
+    padding: 32px 18px 24px;
+  }
+
+  .lost-code {
+    width: 102px;
+  }
+
+  .lost .hstack {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .lost a.button {
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
   }
 
   .splash-screen {
