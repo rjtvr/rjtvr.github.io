@@ -15,9 +15,33 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@knadh/oat@1.0.0/oat.min.css" integrity="sha384-W8Z3f/RFchsEaPcbktneR+q+yniOOmbyw/5T4SLu439RBvA92XMmMoZWdjkpDQhH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/site.min.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    // Splash screen: once per browser session (see the script at the end of <body>).
+    try {
+      if (!sessionStorage.getItem("splash-seen")) {
+        sessionStorage.setItem("splash-seen", "1");
+        document.documentElement.classList.add("show-splash");
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body id="top">
+<div class="splash-screen" aria-hidden="true">
+  <div class="splash-stage">
+    <p class="board-sign">Town Square</p>
+    <div class="card note cream splash-note">
+      <div class="avatar-frame">
+        <svg width="128" height="128" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><g class="av-bob"><g class="av-body"><rect x="6" y="11" width="4" height="1" fill="#e3a979"/><rect x="6" y="12" width="1" height="1" fill="#e3a979"/><rect x="7" y="12" width="2" height="1" fill="#c4885a"/><rect x="9" y="12" width="1" height="1" fill="#e3a979"/><rect x="3" y="13" width="4" height="1" fill="#2f6fb0"/><rect x="7" y="13" width="2" height="1" fill="#f4efe4"/><rect x="9" y="13" width="4" height="1" fill="#2f6fb0"/><rect x="2" y="14" width="5" height="1" fill="#2f6fb0"/><rect x="7" y="14" width="2" height="1" fill="#f4efe4"/><rect x="9" y="14" width="5" height="1" fill="#2f6fb0"/><rect x="2" y="15" width="2" height="1" fill="#2f6fb0"/><rect x="4" y="15" width="1" height="1" fill="#23578c"/><rect x="5" y="15" width="6" height="1" fill="#2f6fb0"/><rect x="11" y="15" width="1" height="1" fill="#23578c"/><rect x="12" y="15" width="2" height="1" fill="#2f6fb0"/></g><g class="av-head"><rect x="5" y="1" width="6" height="1" fill="#2b2118"/><rect x="4" y="2" width="8" height="1" fill="#2b2118"/><rect x="3" y="3" width="10" height="1" fill="#2b2118"/><rect x="3" y="4" width="2" height="1" fill="#2b2118"/><rect x="5" y="4" width="6" height="1" fill="#e3a979"/><rect x="11" y="4" width="2" height="1" fill="#2b2118"/><rect x="3" y="5" width="1" height="1" fill="#2b2118"/><rect x="4" y="5" width="8" height="1" fill="#e3a979"/><rect x="12" y="5" width="1" height="1" fill="#2b2118"/><rect x="3" y="6" width="1" height="1" fill="#e3a979"/><rect x="4" y="6" width="3" height="1" fill="#2b2118"/><rect x="7" y="6" width="2" height="1" fill="#e3a979"/><rect x="9" y="6" width="3" height="1" fill="#2b2118"/><rect x="12" y="6" width="1" height="1" fill="#e3a979"/><rect x="3" y="7" width="1" height="1" fill="#e3a979"/><rect x="4" y="7" width="8" height="1" fill="#2b2118"/><rect x="12" y="7" width="1" height="1" fill="#e3a979"/><rect x="3" y="8" width="1" height="1" fill="#e3a979"/><rect x="4" y="8" width="3" height="1" fill="#2b2118"/><rect x="7" y="8" width="2" height="1" fill="#e3a979"/><rect x="9" y="8" width="3" height="1" fill="#2b2118"/><rect x="12" y="8" width="1" height="1" fill="#e3a979"/><rect x="3" y="9" width="4" height="1" fill="#e3a979"/><rect x="7" y="9" width="2" height="1" fill="#c4885a"/><rect x="9" y="9" width="4" height="1" fill="#e3a979"/><rect x="4" y="10" width="2" height="1" fill="#e3a979"/><rect x="6" y="10" width="4" height="1" fill="#9c4a32"/><rect x="10" y="10" width="2" height="1" fill="#e3a979"/><rect x="5" y="11" width="6" height="1" fill="#e3a979"/><g class="av-eyes"><rect x="5" y="7" width="1" height="1" fill="#8ecbea"/><rect x="10" y="7" width="1" height="1" fill="#8ecbea"/></g></g></g></svg>
+      </div>
+      <p class="splash-name">Rajat Verma</p>
+      <p class="label splash-status">Entering the Town Square</p>
+      <div class="splash-bar"></div>
+      <p class="meta splash-hint"><span class="hide-sm">Press any key or click</span><span class="show-sm">Tap</span> to skip</p>
+    </div>
+  </div>
+</div>
+
 
 <header class="site-header">
   <nav class="container site-nav hstack justify-between" aria-label="Main">
@@ -212,6 +236,20 @@
     header.querySelectorAll(".nav-links a").forEach(function (link) {
       link.addEventListener("click", function () { setOpen(false); });
     });
+  })();
+
+  // Splash screen: shown for 5s on the first page load of the session; any tap or key skips it.
+  (function () {
+    var root = document.documentElement;
+    if (!root.classList.contains("show-splash")) return;
+    function hide() {
+      root.classList.remove("show-splash");
+      removeEventListener("pointerdown", hide);
+      removeEventListener("keydown", hide);
+    }
+    setTimeout(hide, 5000);
+    addEventListener("pointerdown", hide);
+    addEventListener("keydown", hide);
   })();
 </script>
 </body>

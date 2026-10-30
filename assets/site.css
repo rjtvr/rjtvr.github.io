@@ -717,6 +717,114 @@ a.button.primary:hover {
   }
 }
 
+/* ---------- Splash screen (home, once per session) ----------
+   The <head> script adds .show-splash; the end-of-body script removes it
+   after 5s or on any tap/key. Timeline: bar fills 0.3-4.5s, fade 4.6-5s. */
+
+.splash-screen {
+  display: none;
+}
+
+.show-splash .splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--ground);
+  background-image:
+    linear-gradient(rgb(43 33 24 / 0.06) 2px, transparent 2px),
+    linear-gradient(90deg, rgb(43 33 24 / 0.06) 2px, transparent 2px);
+  background-size: 24px 24px;
+  animation: splash-out 0.4s steps(4, end) 4.6s forwards;
+}
+
+.show-splash body {
+  overflow: hidden;
+}
+
+/* Hold the hero avatar intro until the splash is gone: removing the class
+   restores the animation, which then plays from the start. */
+.show-splash .hero .av-bob,
+.show-splash .hero .av-eyes {
+  animation: none;
+}
+
+.splash-stage {
+  width: min(100%, 420px);
+}
+
+.card.note.splash-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 28px 26px;
+  text-align: center;
+}
+
+.splash-name {
+  margin: 18px 0 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.05;
+}
+
+.splash-status {
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Dots type out one at a time, outside the line box so the text stays
+   centred and the line height never changes. */
+.splash-status::after {
+  content: "...";
+  position: absolute;
+  left: 100%;
+  width: 0;
+  overflow: hidden;
+  animation: splash-dots 1.2s steps(4, end) infinite;
+}
+
+/* Segmented loading bar, styled like the XP bars: 12 teal segments of 14px
+   with 4px gaps, filled one segment at a time. The fill is 216px (12 x 18)
+   in a 212px track, so the last gap is clipped. */
+.splash-bar {
+  width: 226px;
+  margin-top: 18px;
+  padding: 4px;
+  overflow: hidden;
+  background: #fff;
+  border: 3px solid var(--ink);
+}
+
+.splash-bar::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 14px;
+  background: repeating-linear-gradient(90deg, var(--teal) 0 14px, transparent 14px 18px);
+  animation: splash-fill 4.2s steps(12, end) 0.3s forwards;
+}
+
+.splash-hint {
+  margin-top: 14px;
+}
+
+@keyframes splash-fill {
+  to { width: 216px; }
+}
+
+@keyframes splash-dots {
+  to { width: 4ch; }
+}
+
+@keyframes splash-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
 /* ---------- Phone layout (matches the mobile mockup frames) ---------- */
 
 @media (max-width: 600px) {
@@ -1177,6 +1285,19 @@ a.button.primary:hover {
     font-size: 9px;
   }
 
+  .splash-screen {
+    padding: 16px;
+  }
+
+  .card.note.splash-note {
+    padding: 36px 18px 22px;
+  }
+
+  .splash-name {
+    margin-top: 14px;
+    font-size: 30px;
+  }
+
   a.button.back-bottom {
     justify-content: center;
     min-height: 50px;
@@ -1190,7 +1311,13 @@ a.button.primary:hover {
   }
 
   .av-bob,
-  .av-eyes {
+  .av-eyes,
+  .show-splash .splash-screen {
+    animation: none;
+  }
+
+  .splash-status::after {
+    width: auto;
     animation: none;
   }
 }
