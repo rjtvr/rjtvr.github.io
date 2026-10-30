@@ -109,4 +109,5 @@ Mockup inline styles map to classes here. Port new elements as named classes in 
 | 16×16 avatar | 32×32 redraw with display-scale sizing | Tried, then reverted at the owner's request |
 | Pixel-drawn SVG digits for Workshop stat numbers (5×7 glyphs, `role="img"` + `aria-label`) | Bold or larger Pixelify Sans, Silkscreen | Pixelify's "5" reads as "S" at stat size, and Silkscreen overflows the desktop tiles; SVG keeps both fonts unchanged and stays crisp. New stat values need their glyphs drawn |
 | Splash screen once per session, skippable | Showing it on every load, unskippable | The owner asked for a 5s splash; limiting it keeps return visits and in-site navigation fast |
+| Resume as a split button: "View resume" (new tab) + attached download square, pixel-drawn icons | Two separate buttons; an in-page PDF preview | Fits the contact row on desktop; in-page PDF embeds fail on Android Chrome and show one page on iOS |
 | Side quests section omitted | Shipping the mockup's placeholders | No real Go/Python projects yet |

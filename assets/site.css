@@ -597,28 +597,38 @@ a.button.primary:hover {
   margin-top: 20px;
 }
 
-/* Placeholder until the resume PDF (without the phone number) is published:
-   no link, dashed like the other "not yet" elements (Leveling up chips, the
-   Next quest). Swap it for a download link when the PDF is ready. */
-a.button.resume-soon {
+/* Resume split button: "View resume" opens the PDF in a new tab; the attached
+   square downloads it. The pair shares one outline and one shadow. */
+.split-button {
+  display: inline-flex;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.split-button a.button {
   gap: 8px;
-  border-style: dashed;
   box-shadow: none;
-  color: var(--ink-soft);
-  cursor: not-allowed;
-  opacity: 1; /* Oat fades [aria-disabled]; keep the label readable. */
 }
 
-a.button.resume-soon:hover {
-  background: var(--paper);
-  color: var(--ink-soft);
+.split-button a.split-download {
+  justify-content: center;
+  width: 44px;
+  padding: 0;
+  border-left-width: 0;
 }
 
-.soon-tag {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 400;
-  color: var(--teal);
+.split-button .icon {
+  display: block;
+  flex: none;
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .site-footer {
@@ -1284,6 +1294,16 @@ a.button.resume-soon:hover {
   .contact a.button {
     width: 100%;
     min-height: 50px;
+  }
+
+  .contact .split-button a.button {
+    flex: 1 1 auto;
+    justify-content: center;
+    width: auto;
+  }
+
+  .contact .split-button a.split-download {
+    flex: 0 0 52px;
   }
 
   .site-footer {
