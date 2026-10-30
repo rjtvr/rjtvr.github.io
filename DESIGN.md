@@ -76,7 +76,7 @@ Shared rules:
 
 ## Splash screen
 
-- Home page only, once per browser session (`sessionStorage` key `splash-seen`). A `<head>` script adds `.show-splash` to `<html>` before first paint; the end-of-body script removes it after 5s or on any tap or key.
+- Home page only, once per browser session (`sessionStorage` key `splash-seen`). Add `?splash` to the URL (`index.html?splash`) to show it every time while previewing. A `<head>` script adds `.show-splash` to `<html>` before first paint; the end-of-body script removes it after 5s or on any tap or key.
 - Timeline: the 12-segment bar fills in steps from 0.3s to 4.5s, then the screen fades out in 4 steps (4.6–5s). Keep the CSS timings and the 5000ms timeout in step.
 - The hero avatar intro is held while the splash shows and plays when it closes.
 - Without JS, or with storage blocked, there is no splash. Under reduced motion it still shows and can be skipped, but the dots and fade are static.

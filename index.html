@@ -17,9 +17,10 @@
   <link rel="stylesheet" href="assets/site.min.css">
   <script>
     document.documentElement.classList.add("js");
-    // Splash screen: once per browser session (see the script at the end of <body>).
+    // Splash screen: once per browser session, or always with ?splash in the URL
+    // (see the script at the end of <body>).
     try {
-      if (!sessionStorage.getItem("splash-seen")) {
+      if (/[?&]splash/.test(location.search) || !sessionStorage.getItem("splash-seen")) {
         sessionStorage.setItem("splash-seen", "1");
         document.documentElement.classList.add("show-splash");
       }
