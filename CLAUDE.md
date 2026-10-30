@@ -36,5 +36,6 @@ Follow [Conventional Commits v1.0.0](https://www.conventionalcommits.org/en/v1.0
 - Breaking changes: add `!` after the type/scope, and/or a `BREAKING CHANGE: <details>` footer (MAJOR bump). `BREAKING-CHANGE` is a synonym.
 - Description: imperative mood, lowercase, no trailing period, ideally under 72 characters.
 - Separate the body and the footers from what precedes them with a blank line.
+- Wrap body and footer lines at 100 characters; CI rejects longer lines (`body-max-line-length`).
 - Footers use `Token: value` or `Token #value` (e.g. `Refs: #123`). Tokens use `-` in place of spaces, except `BREAKING CHANGE`.
 - Apply this to new commits only; existing history stays as it is.

@@ -249,30 +249,27 @@ main.container {
   border: 3px solid var(--ink);
 }
 
-/* Avatar: idle bob + blink in CSS; index.html's script moves .av-head and
-   .av-eyes toward the pointer in SVG units (1px = one art pixel). Every
-   motion snaps (step timing) to stay pixel-art. */
-.avatar {
-  overflow: hidden;
+/* Avatar waves once on page load: the arm pops up, the hand sways one art
+   pixel (1px = one pixel of the 16x16 SVG) four times, then the arm drops.
+   Step timing keeps every move pixel-snapped. The arm stays hidden when
+   motion is reduced. */
+.av-arm {
+  opacity: 0;
+  animation: av-arm 2.6s step-end 0.4s forwards;
 }
 
-.av-bob {
-  animation: av-bob 3.2s step-end infinite;
+.av-hand {
+  animation: av-wave 0.44s step-end 0.7s 4;
 }
 
-.av-eyes {
-  animation: av-blink 4.6s step-end infinite;
-}
-
-@keyframes av-bob {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(0.5px); }
-}
-
-@keyframes av-blink {
+@keyframes av-arm {
   0% { opacity: 1; }
-  90% { opacity: 0; }
-  94% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes av-wave {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-1px); }
 }
 
 .hero h1 {
@@ -1164,8 +1161,8 @@ a.button.primary:hover {
     transform: none;
   }
 
-  .av-bob,
-  .av-eyes {
+  .av-arm,
+  .av-hand {
     animation: none;
   }
 }
