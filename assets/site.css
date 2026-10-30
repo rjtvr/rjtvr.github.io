@@ -674,7 +674,10 @@ a.button.primary:hover {
   padding-top: 10px;
 }
 
+/* Stretch (Oat's .hstack centres) so tiles match height when one label wraps
+   and another doesn't. */
 .stats {
+  align-items: stretch;
   gap: 10px;
 }
 
