@@ -674,7 +674,10 @@ a.button.primary:hover {
   padding-top: 10px;
 }
 
+/* Stretch (Oat's .hstack centres) so tiles match height when one label wraps
+   and another doesn't. */
 .stats {
+  align-items: stretch;
   gap: 10px;
 }
 
@@ -686,10 +689,17 @@ a.button.primary:hover {
   border: 2px solid var(--ink);
 }
 
+/* Stat numbers are pixel-drawn SVG (5x7 glyphs drawn 20px tall): at this
+   size Pixelify Sans renders "5" almost like "S". */
 .stat strong {
   display: block;
-  font-size: 22px;
-  font-weight: 700;
+  margin: 2px 0 6px;
+}
+
+.stat strong svg {
+  display: block;
+  height: 20px;
+  width: auto;
 }
 
 .stat span {
@@ -1159,8 +1169,8 @@ a.button.primary:hover {
     text-align: center;
   }
 
-  .stat strong {
-    font-size: 20px;
+  .stat strong svg {
+    margin-inline: auto;
   }
 
   .stat span {
