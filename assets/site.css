@@ -91,6 +91,11 @@ a:hover {
   margin: 0;
 }
 
+/* Swap content between desktop and phone widths (see the phone media query). */
+.show-sm {
+  display: none;
+}
+
 .meta {
   margin: 0;
   font-family: var(--font-mono);
@@ -122,6 +127,10 @@ a:hover {
   color: var(--ink);
   font-size: 18px;
   font-weight: 700;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .nav-links {
@@ -274,6 +283,10 @@ main.container {
   letter-spacing: 0.5px;
 }
 
+.facts i {
+  font-style: normal;
+}
+
 .now-title {
   margin: 12px 0 0;
   font-size: 20px;
@@ -303,12 +316,17 @@ main.container {
 }
 
 .build-list a {
+  display: block;
+}
+
+.build-name {
   font-size: 18px;
   font-weight: 700;
 }
 
-.build-list p {
-  margin: 4px 0 0;
+.build-desc {
+  display: block;
+  margin-top: 4px;
   font-size: 15px;
   line-height: 1.5;
   color: #4f3e2c;
@@ -643,6 +661,471 @@ a.button.primary:hover {
 @media (min-width: 769px) and (max-width: 1080px) {
   .projects > .col-4 {
     --span: 6;
+  }
+}
+
+/* ---------- Phone layout (matches the mobile mockup frames) ---------- */
+
+@media (max-width: 600px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .show-sm {
+    display: revert;
+  }
+
+  a.button.show-sm {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 36px;
+    background-size: 20px 20px;
+  }
+
+  /* Header: hamburger on home, current-page label on Workshop. */
+  .site-nav {
+    flex-wrap: nowrap;
+    padding: 8px 12px 8px 16px;
+  }
+
+  .js .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .js .menu-toggle:hover {
+    background: var(--cream);
+  }
+
+  .site-header:has(.menu-toggle) .site-nav {
+    flex-wrap: wrap;
+  }
+
+  .js .site-header:not(.menu-open) #site-menu {
+    display: none;
+  }
+
+  #site-menu {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0;
+    width: calc(100% + 28px);
+    margin: 8px -12px -8px -16px;
+    border-top: 3px solid var(--ink);
+    font-size: 15px;
+  }
+
+  #site-menu a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 20px;
+    border-bottom: 2px dashed #cdbfa8;
+  }
+
+  #site-menu a:last-child {
+    border-bottom: 0;
+  }
+
+  .current-only-sm a:not([aria-current]) {
+    display: none;
+  }
+
+  .current-only-sm a[aria-current] {
+    padding-right: 6px;
+    font-size: 12px;
+    text-decoration: none;
+  }
+
+  /* Board */
+  main.container {
+    padding: 28px 10px 0;
+  }
+
+  .board-sign {
+    margin-bottom: -18px;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .board {
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 6px 0 rgb(43 33 24 / 0.3);
+  }
+
+  .board-inner {
+    gap: 24px;
+    padding: 34px 12px 20px;
+  }
+
+  .board-inner.shelves {
+    background-size: 100% 220px;
+  }
+
+  .row {
+    --grid-gap: 24px;
+  }
+
+  .card.note,
+  .note.hero,
+  .note.quest-log {
+    padding: 22px 18px;
+    box-shadow: 4px 4px 0 rgb(43 33 24 / 0.35);
+    transform: none;
+  }
+
+  .card.note::before {
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  /* Hero */
+  .hero-id {
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  .hero-id > div:last-child {
+    min-width: 0;
+  }
+
+  .avatar-frame {
+    width: 88px;
+    height: 88px;
+  }
+
+  .avatar-frame svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    letter-spacing: 0;
+  }
+
+  .hero .role {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .hero .tagline {
+    margin-top: 18px;
+    font-size: 18px;
+  }
+
+  .hero .prose {
+    font-size: 15px;
+  }
+
+  .hero .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 12px;
+    letter-spacing: 0;
+  }
+
+  .facts i {
+    display: none;
+  }
+
+  .facts span {
+    padding: 4px 8px;
+    background: var(--note-cream);
+    border: 2px solid var(--ink);
+    font-size: 11px;
+  }
+
+  /* Now */
+  .now-title {
+    margin-top: 10px;
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .now-title span {
+    display: block;
+    font-size: 16px;
+  }
+
+  .side-quest {
+    align-items: flex-start;
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+
+  .side-quest svg {
+    flex: 0 0 auto;
+    margin-top: 2px;
+  }
+
+  /* Featured builds: each row is one tap target. */
+  .build-list {
+    gap: 0;
+    margin-top: 8px;
+  }
+
+  .build-list a {
+    padding: 12px 0;
+    border-bottom: 2px dashed #c9b25a;
+  }
+
+  .build-list li:last-child a {
+    border-bottom: 0;
+  }
+
+  .build-name::after {
+    content: " →";
+  }
+
+  .build-desc {
+    font-size: 14px;
+  }
+
+  .all-projects {
+    margin-top: 10px;
+  }
+
+  .all-projects a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    background: var(--paper);
+    color: var(--ink);
+    border: 3px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* Toolbelt */
+  .toolbelt h2 + .label.small {
+    margin-top: 14px;
+  }
+
+  .toolbelt .label.small {
+    margin-top: 16px;
+  }
+
+  .chips {
+    gap: 8px;
+  }
+
+  .badge.chip {
+    padding: 5px 9px;
+    box-shadow: 2px 2px 0 var(--chip-shadow, var(--blue));
+    font-size: 14px;
+  }
+
+  .xp-row {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .chip.learning {
+    flex: 0 0 auto;
+    width: 64px;
+    padding: 5px 0;
+    box-shadow: none;
+  }
+
+  .xp span {
+    width: 12px;
+    height: 12px;
+  }
+
+  .xp span:nth-child(n + 7) {
+    display: none;
+  }
+
+  .xp-row .meta {
+    font-size: 10px;
+  }
+
+  /* Achievements: 2 x 2 tiles */
+  .achievements {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .achievement {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 10px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    text-align: center;
+  }
+
+  .achievement p {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .achievement .meta {
+    margin-top: 6px;
+    font-size: 10px;
+  }
+
+  /* Quest log: vertical timeline */
+  .quests {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 22px;
+    margin: 18px 0 0 8px;
+    padding-left: 22px;
+    border-left: 4px solid var(--ink);
+  }
+
+  .quests li,
+  .quests li.next {
+    flex: none;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .quests li::before {
+    top: 2px;
+    left: -34px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .quests .meta {
+    font-size: 11px;
+  }
+
+  .quests h3 {
+    margin-top: 4px;
+  }
+
+  .quests p:not(.meta) {
+    margin-top: 3px;
+  }
+
+  /* Contact */
+  .contact {
+    margin: 32px 4px 0;
+    padding: 24px 18px;
+    box-shadow: 0 5px 0 #3d2210;
+  }
+
+  .contact h2 {
+    font-size: 13px;
+  }
+
+  .contact p {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+
+  .contact .hstack {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .contact a.button {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .site-footer {
+    margin-top: 28px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  /* Workshop */
+  .workshop-head h1 {
+    font-size: 30px;
+  }
+
+  .workshop-head p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .projects {
+    --grid-gap: 20px;
+  }
+
+  .card.project {
+    gap: 8px;
+    padding: 18px 16px 20px;
+    box-shadow: 4px 4px 0 rgb(43 33 24 / 0.35);
+  }
+
+  .project .tag,
+  .project .meta {
+    font-size: 10px !important;
+  }
+
+  .project .tag {
+    padding: 3px 7px;
+  }
+
+  .project h2 {
+    font-size: 24px;
+  }
+
+  .project ul {
+    display: block;
+    margin-top: 2px;
+  }
+
+  .project .chips {
+    padding-top: 6px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 8px 6px;
+    text-align: center;
+  }
+
+  .stat strong {
+    font-size: 20px;
+  }
+
+  .stat span {
+    font-size: 9px;
+  }
+
+  a.button.back-bottom {
+    justify-content: center;
+    min-height: 50px;
+    margin-top: 4px;
   }
 }
 

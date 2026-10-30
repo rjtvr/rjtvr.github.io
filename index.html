@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@knadh/oat@1.0.0/oat.min.css" integrity="sha384-W8Z3f/RFchsEaPcbktneR+q+yniOOmbyw/5T4SLu439RBvA92XMmMoZWdjkpDQhH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body id="top">
 
@@ -24,7 +25,10 @@
       <svg width="24" height="24" viewBox="0 0 12 12" aria-hidden="true" shape-rendering="crispEdges"><rect x="5" y="1" width="2" height="1" fill="#a8321c"/><rect x="4" y="2" width="4" height="1" fill="#a8321c"/><rect x="3" y="3" width="6" height="1" fill="#a8321c"/><rect x="2" y="4" width="8" height="1" fill="#a8321c"/><rect x="1" y="5" width="10" height="1" fill="#a8321c"/><rect x="2" y="6" width="8" height="5" fill="#f2d49b"/><rect x="5" y="8" width="2" height="3" fill="#6b3d1f"/><rect x="3" y="7" width="1" height="1" fill="#4a90c8"/><rect x="8" y="7" width="1" height="1" fill="#4a90c8"/></svg>
       Town Square
     </a>
-    <div class="nav-links hstack">
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 10 10" aria-hidden="true" shape-rendering="crispEdges"><rect x="1" y="2" width="8" height="1" fill="#2b2118"/><rect x="1" y="5" width="8" height="1" fill="#2b2118"/><rect x="1" y="8" width="8" height="1" fill="#2b2118"/></svg>
+    </button>
+    <div id="site-menu" class="nav-links hstack">
       <a href="#about">About</a>
       <a href="workshop.html">Workshop</a>
       <a href="#quest-log">Quest log</a>
@@ -41,7 +45,7 @@
     <div class="board-inner">
 
       <section id="about" class="card note hero" aria-label="About">
-        <div class="hstack gap-6">
+        <div class="hstack gap-6 hero-id">
           <div class="avatar-frame">
             <svg width="128" height="128" viewBox="0 0 16 16" role="img" aria-label="Pixel-art avatar of Rajat" shape-rendering="crispEdges"><rect x="5" y="1" width="6" height="1" fill="#2b2118"/><rect x="4" y="2" width="8" height="1" fill="#2b2118"/><rect x="3" y="3" width="10" height="1" fill="#2b2118"/><rect x="3" y="4" width="2" height="1" fill="#2b2118"/><rect x="5" y="4" width="6" height="1" fill="#e3a979"/><rect x="11" y="4" width="2" height="1" fill="#2b2118"/><rect x="3" y="5" width="1" height="1" fill="#2b2118"/><rect x="4" y="5" width="8" height="1" fill="#e3a979"/><rect x="12" y="5" width="1" height="1" fill="#2b2118"/><rect x="3" y="6" width="1" height="1" fill="#e3a979"/><rect x="4" y="6" width="3" height="1" fill="#2b2118"/><rect x="7" y="6" width="2" height="1" fill="#e3a979"/><rect x="9" y="6" width="3" height="1" fill="#2b2118"/><rect x="12" y="6" width="1" height="1" fill="#e3a979"/><rect x="3" y="7" width="1" height="1" fill="#e3a979"/><rect x="4" y="7" width="8" height="1" fill="#2b2118"/><rect x="5" y="7" width="1" height="1" fill="#8ecbea"/><rect x="10" y="7" width="1" height="1" fill="#8ecbea"/><rect x="12" y="7" width="1" height="1" fill="#e3a979"/><rect x="3" y="8" width="1" height="1" fill="#e3a979"/><rect x="4" y="8" width="3" height="1" fill="#2b2118"/><rect x="7" y="8" width="2" height="1" fill="#e3a979"/><rect x="9" y="8" width="3" height="1" fill="#2b2118"/><rect x="12" y="8" width="1" height="1" fill="#e3a979"/><rect x="3" y="9" width="4" height="1" fill="#e3a979"/><rect x="7" y="9" width="2" height="1" fill="#c4885a"/><rect x="9" y="9" width="4" height="1" fill="#e3a979"/><rect x="4" y="10" width="2" height="1" fill="#e3a979"/><rect x="6" y="10" width="4" height="1" fill="#9c4a32"/><rect x="10" y="10" width="2" height="1" fill="#e3a979"/><rect x="5" y="11" width="6" height="1" fill="#e3a979"/><rect x="6" y="12" width="1" height="1" fill="#e3a979"/><rect x="7" y="12" width="2" height="1" fill="#c4885a"/><rect x="9" y="12" width="1" height="1" fill="#e3a979"/><rect x="3" y="13" width="4" height="1" fill="#2f6fb0"/><rect x="7" y="13" width="2" height="1" fill="#f4efe4"/><rect x="9" y="13" width="4" height="1" fill="#2f6fb0"/><rect x="2" y="14" width="5" height="1" fill="#2f6fb0"/><rect x="7" y="14" width="2" height="1" fill="#f4efe4"/><rect x="9" y="14" width="5" height="1" fill="#2f6fb0"/><rect x="2" y="15" width="2" height="1" fill="#2f6fb0"/><rect x="4" y="15" width="1" height="1" fill="#23578c"/><rect x="5" y="15" width="6" height="1" fill="#2f6fb0"/><rect x="11" y="15" width="1" height="1" fill="#23578c"/><rect x="12" y="15" width="2" height="1" fill="#2f6fb0"/></svg>
           </div>
@@ -52,7 +56,7 @@
         </div>
         <p class="tagline">I build fast, secure web products — and lead the team that ships them.</p>
         <p class="prose">Nearly six years across fintech, payments, banking, BaaS, tax, travel and event management. React, Next.js and Angular are home base; these days I'm also leveling up on the backend with Node.js, Go and Python.</p>
-        <p class="meta facts">B.Tech CS · ~6 yrs exp · Leads a team of 6 · New Delhi, IN</p>
+        <p class="meta facts"><span>B.Tech CS</span><i aria-hidden="true"> · </i><span>~6 yrs exp</span><i aria-hidden="true"> · </i><span>Leads a team of 6</span><i aria-hidden="true"> · </i><span>New Delhi, IN</span></p>
       </section>
 
       <div class="row">
@@ -70,19 +74,16 @@
           <h2 id="builds-h" class="label">Featured builds</h2>
           <ul class="unstyled vstack build-list">
             <li>
-              <a href="workshop.html#pegasus">Pegasus</a>
-              <p>Horse-show platform: drag-and-drop stall maps, RBAC and super-admin tools, with WorkOS, Stripe, Resend and Sentry wired in.</p>
+              <a href="workshop.html#pegasus"><span class="build-name">Pegasus</span><span class="build-desc">Horse-show platform: drag-and-drop stall maps, RBAC and super-admin tools, with WorkOS, Stripe, Resend and Sentry wired in.</span></a>
             </li>
             <li>
-              <a href="workshop.html#bancstac">BancStac</a>
-              <p>Banking &amp; payments: 25% faster page loads, 15% fewer payment failures, PCI DSS Level 1 fixes across 10+ modules.</p>
+              <a href="workshop.html#bancstac"><span class="build-name">BancStac</span><span class="build-desc">Banking &amp; payments: 25% faster page loads, 15% fewer payment failures, PCI DSS Level 1 fixes across 10+ modules.</span></a>
             </li>
             <li>
-              <a href="workshop.html#tava-js">Tava JS</a>
-              <p>Backend-as-a-Service CLI on AWS Lambda, EC2 and S3; GitHub Actions CI/CD cut deploy time by 40%.</p>
+              <a href="workshop.html#tava-js"><span class="build-name">Tava JS</span><span class="build-desc">Backend-as-a-Service CLI on AWS Lambda, EC2 and S3; GitHub Actions CI/CD cut deploy time by 40%.</span></a>
             </li>
           </ul>
-          <p class="mt-4"><a href="workshop.html">All projects at the Workshop →</a></p>
+          <p class="mt-4 all-projects"><a href="workshop.html">All projects at the Workshop<span aria-hidden="true" class="hide-sm"> →</span></a></p>
         </section>
       </div>
 
@@ -130,19 +131,19 @@
           <ul class="unstyled vstack achievements">
             <li class="achievement">
               <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="1" y="1" width="6" height="1" fill="#e0a526"/><rect x="0" y="1" width="1" height="2" fill="#e0a526"/><rect x="7" y="1" width="1" height="2" fill="#e0a526"/><rect x="2" y="2" width="4" height="2" fill="#e0a526"/><rect x="3" y="4" width="2" height="2" fill="#c78a12"/><rect x="2" y="6" width="4" height="1" fill="#6b3d1f"/></svg>
-              <div><p>Client Hero</p><p class="meta">Innostax · 2023</p></div>
+              <div><p>Client Hero</p><p class="meta"><span class="hide-sm">Innostax · </span>2023</p></div>
             </li>
             <li class="achievement">
               <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="3" y="0" width="2" height="2" fill="#e0a526"/><rect x="0" y="2" width="8" height="2" fill="#e0a526"/><rect x="1" y="4" width="6" height="1" fill="#e0a526"/><rect x="1" y="5" width="2" height="2" fill="#c78a12"/><rect x="5" y="5" width="2" height="2" fill="#c78a12"/></svg>
-              <div><p>Fast Start Champion</p><p class="meta">Innostax · 2022</p></div>
+              <div><p>Fast Start Champion</p><p class="meta"><span class="hide-sm">Innostax · </span>2022</p></div>
             </li>
             <li class="achievement">
               <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="3" y="0" width="2" height="1" fill="#1d6b63"/><rect x="2" y="1" width="4" height="1" fill="#1d6b63"/><rect x="1" y="2" width="6" height="1" fill="#1d6b63"/><rect x="3" y="3" width="2" height="5" fill="#1d6b63"/></svg>
-              <div><p>Two promotions</p><p class="meta">Associate → SDE1 → SDE2 / Lead</p></div>
+              <div><p>Two promotions</p><p class="meta"><span class="hide-sm">Associate → SDE1 → </span><span class="show-sm">to </span>SDE2 / Lead</p></div>
             </li>
             <li class="achievement">
               <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="1" y="1" width="6" height="5" fill="#2f6fb0"/><rect x="2" y="2" width="4" height="1" fill="#fff"/><rect x="2" y="4" width="3" height="1" fill="#fff"/><rect x="3" y="6" width="2" height="2" fill="#a8321c"/></svg>
-              <div><p>Claude Academy</p><p class="meta">Claude 101 · Claude Code · 2026</p></div>
+              <div><p>Claude Academy</p><p class="meta"><span class="hide-sm">Claude 101 · Claude Code · </span>2026</p></div>
             </li>
           </ul>
         </section>
@@ -164,7 +165,7 @@
           <li style="--marker: var(--note-yellow)">
             <p class="meta">2022</p>
             <h3>Joined Innostax</h3>
-            <p>Associate SE → SDE1 in six months. Travelstart, PlentyExchange, BancStac.</p>
+            <p>Associate SE → SDE1 in six months. Travelstart, PlentiExchange, BancStac.</p>
           </li>
           <li style="--marker: var(--pin-red)">
             <p class="meta">2025</p>
@@ -188,12 +189,30 @@
     <div class="hstack">
       <a href="mailto:rajatverma1963@gmail.com" class="button primary">Email me</a>
       <a href="https://linkedin.com/in/rajat-vrma" class="button" rel="noopener">LinkedIn</a>
-      <a href="workshop.html" class="button">See the Workshop</a>
+      <a href="workshop.html" class="button hide-sm">See the Workshop</a>
     </div>
   </section>
 
-  <p class="site-footer">Built pixel by pixel · New Delhi · © 2026 Rajat Verma</p>
+  <p class="site-footer">Built pixel by pixel · New Delhi<span class="hide-sm"> · </span><br class="show-sm">© 2026 Rajat Verma</p>
 </main>
 
+<script>
+  // Phone-width menu: the toggle is hidden on wider screens, where the links are always shown.
+  (function () {
+    var header = document.querySelector(".site-header");
+    var toggle = header.querySelector(".menu-toggle");
+    function setOpen(open) {
+      header.classList.toggle("menu-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    toggle.addEventListener("click", function () {
+      setOpen(!header.classList.contains("menu-open"));
+    });
+    header.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () { setOpen(false); });
+    });
+  })();
+</script>
 </body>
 </html>
