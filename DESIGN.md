@@ -77,7 +77,7 @@ Shared rules:
 - **Box sizing:** the mockup sizes outlined boxes with borders *added outside* the width, but Oat sets `box-sizing: border-box`. Any outlined marker or square copied from the mockup needs its border width added to its size, or it renders too small and sits off-centre. The quest log markers needed this: 22px on desktop, 20px on phones.
 - **Italics:** Oat italicises `<i>`; the hero-fact separators reset it with `.facts i { font-style: normal }`.
 - **Oat's `.hstack` wraps** by default. Set `flex-wrap: nowrap` on any `.hstack` turned into a column, or its items shrink to their content width (the phone menu needed this).
-- **Narrow phones:** at 320px wide, "Verma" breaks onto a second line beside the avatar. The fix is to stack the avatar above the name below 360px (not applied yet).
+- **Narrow phones:** the hero name column is a size container (`hero-name`). When it is narrower than "Verma" (about 104px, so up to roughly 330px viewports), `.surname` is hidden visually, so the heading reads "Rajat" rather than breaking mid-word. Screen readers still hear the full name. If the h1 font size changes, re-measure the threshold.
 
 ## Mockup source
 

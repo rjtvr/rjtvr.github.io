@@ -270,6 +270,26 @@ main.container {
   50% { opacity: 1; }
 }
 
+/* The name column is a size container so the surname can drop out when it
+   no longer fits on one line (narrowest phones), instead of breaking
+   mid-word. It stays readable to screen readers. */
+.hero-id > div:last-child {
+  flex: 1 1 0;
+  min-width: 0;
+  container: hero-name / inline-size;
+}
+
+@container hero-name (max-width: 104px) {
+  .surname {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
 .hero h1 {
   margin: 0;
   font-size: clamp(36px, 5vw, 48px);
