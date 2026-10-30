@@ -51,6 +51,7 @@ Shared rules:
 - Workshop: a heading row (`.workshop-head`), then `.row.projects` with `col-4` project cards. Cards are three across on desktop, two at 769–1080px, one below that.
 - Featured builds link to Workshop cards by id (`workshop.html#pegasus`). Keep card ids lowercase and hyphenated.
 - The two pages repeat the same `<head>` and header markup; change both together.
+- Link previews (LinkedIn, social) use `assets/og-image.png`, a 1200×627 screenshot of the top of the home page, set as `og:image` on both pages. Re-take it when the hero changes.
 
 ## Phone layout
 
