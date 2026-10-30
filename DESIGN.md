@@ -21,6 +21,7 @@ The design is a village **Town Square** with a **Quest Board**. Keep these names
 | Quest log | The career timeline; the dashed last entry is "Next" | `.quests`, `li.next` |
 | Contact sign | "Send a carrier pigeon" panel below the board | `.contact` |
 | Side quests | Personal Go/Python projects. In the mockup, intentionally not built yet | (none) |
+| Splash screen | "Town Square" sign over a pinned note with the avatar, name and a segmented loading bar, shown on the home page before the board | `.splash-screen`, `.show-splash` |
 
 ## Stack
 
@@ -74,12 +75,21 @@ Shared rules:
 - **On first load:** it rises 3 art pixels into its frame in steps, then blinks twice. The animation is pure CSS, plays once, and is off under `prefers-reduced-motion`.
 - **Motion rule:** animate in whole art pixels with `step-end` / `steps()` timing, never smooth tweens, so it stays pixel art. Inside the SVG, CSS `1px` equals one art pixel.
 
+## Splash screen
+
+- Home page only, once per browser session (`sessionStorage` key `splash-seen`). Add `?splash` to the URL (`index.html?splash`) to show it every time while previewing. A `<head>` script adds `.show-splash` to `<html>` before first paint; the end-of-body script removes it after 5s or on any tap or key.
+- Timeline: the 12-segment bar fills in steps from 0.3s to 4.5s, then the screen fades out in 4 steps (4.6–5s). Keep the CSS timings and the 5000ms timeout in step.
+- The hero avatar intro is held while the splash shows and plays when it closes.
+- Without JS, or with storage blocked, there is no splash. Under reduced motion it still shows and can be skipped, but the dots and fade are static.
+
 ## Gotchas
 
 - **Box sizing:** the mockup sizes outlined boxes with borders *added outside* the width, but Oat sets `box-sizing: border-box`. Any outlined marker or square copied from the mockup needs its border width added to its size, or it renders too small and sits off-centre. The quest log markers needed this: 22px on desktop, 20px on phones.
 - **Italics:** Oat italicises `<i>`; the hero-fact separators reset it with `.facts i { font-style: normal }`.
 - **Oat's `.hstack` wraps** by default. Set `flex-wrap: nowrap` on any `.hstack` turned into a column, or its items shrink to their content width (the phone menu needed this).
 - **Narrow phones:** the hero name column is a size container (`hero-name`). When it is narrower than "Verma" (about 104px, so up to roughly 330px viewports), `.surname` is hidden visually, so the heading reads "Rajat" rather than breaking mid-word. Screen readers still hear the full name. If the h1 font size changes, re-measure the threshold.
+
+- **Scrollbar shift:** the splash locks scrolling (`overflow: hidden`), which hides desktop scrollbars. `html { scrollbar-gutter: stable }` keeps the scrollbar's space reserved, so the page doesn't jump sideways when the lock releases. Keep it while anything toggles page scrolling.
 
 ## Mockup source
 
@@ -97,4 +107,5 @@ Mockup inline styles map to classes here. Port new elements as named classes in 
 | Rise-and-blink intro on load | Pointer-following eyes, hand wave, looping bob/blink | The owner tried and rejected each in turn; they wanted one normal animation on first load |
 | 16×16 avatar | 32×32 redraw with display-scale sizing | Tried, then reverted at the owner's request |
 | Pixel-drawn SVG digits for Workshop stat numbers (5×7 glyphs, `role="img"` + `aria-label`) | Bold or larger Pixelify Sans, Silkscreen | Pixelify's "5" reads as "S" at stat size, and Silkscreen overflows the desktop tiles; SVG keeps both fonts unchanged and stays crisp. New stat values need their glyphs drawn |
+| Splash screen once per session, skippable | Showing it on every load, unskippable | The owner asked for a 5s splash; limiting it keeps return visits and in-site navigation fast |
 | Side quests section omitted | Shipping the mockup's placeholders | No real Go/Python projects yet |
