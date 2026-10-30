@@ -1,146 +1,199 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajat Verma | Frontend Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .fade-slide {
-      will-change: transform, opacity;
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-slide.show {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-    .fade-slide[data-animate] {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rajat Verma — Frontend-focused full-stack engineer</title>
+  <meta name="description" content="Rajat Verma, frontend-focused full-stack engineer in New Delhi. Nearly six years building fast, secure web products across fintech, payments, banking, BaaS, tax, travel and event management.">
+  <meta property="og:title" content="Rajat Verma — Frontend-focused full-stack engineer">
+  <meta property="og:description" content="I build fast, secure web products — and lead the team that ships them.">
+  <meta property="og:url" content="https://rjtvr.github.io/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@knadh/oat@1.0.0/oat.min.css" integrity="sha384-W8Z3f/RFchsEaPcbktneR+q+yniOOmbyw/5T4SLu439RBvA92XMmMoZWdjkpDQhH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-center p-6 fade-slide">
-    <h1 class="text-4xl font-extrabold text-gray-900">Rajat Verma</h1>
-    <p class="text-base text-gray-600 mt-1">Frontend Developer</p>
-    <p class="mt-2 text-sm text-gray-500">📍 New Delhi | 📧 rajatverma1963@gmail.com</p>
-  </header>
+<body id="top">
 
-  <main class="max-w-2xl mx-auto pt-44">
-    <section class="bg-white rounded-xl p-6 my-6 shadow-sm fade-slide">
-      <h2 class="text-xl font-bold mb-2 border-b pb-1">About</h2>
-      <p class="text-sm leading-relaxed text-gray-700">
-        Tech-savvy frontend developer with 3+ years of experience creating responsive, intuitive web apps using modern tech like React, Tailwind CSS, and JavaScript. Passionate about performance, design, and clean UI/UX.
-      </p>
-    </section>
+<header class="site-header">
+  <nav class="container site-nav hstack justify-between" aria-label="Main">
+    <a href="#top" class="brand">
+      <svg width="24" height="24" viewBox="0 0 12 12" aria-hidden="true" shape-rendering="crispEdges"><rect x="5" y="1" width="2" height="1" fill="#a8321c"/><rect x="4" y="2" width="4" height="1" fill="#a8321c"/><rect x="3" y="3" width="6" height="1" fill="#a8321c"/><rect x="2" y="4" width="8" height="1" fill="#a8321c"/><rect x="1" y="5" width="10" height="1" fill="#a8321c"/><rect x="2" y="6" width="8" height="5" fill="#f2d49b"/><rect x="5" y="8" width="2" height="3" fill="#6b3d1f"/><rect x="3" y="7" width="1" height="1" fill="#4a90c8"/><rect x="8" y="7" width="1" height="1" fill="#4a90c8"/></svg>
+      Town Square
+    </a>
+    <div class="nav-links hstack">
+      <a href="#about">About</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="#quest-log">Quest log</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
 
-    <section class="bg-white rounded-xl p-6 my-6 shadow-sm fade-slide">
-      <h2 class="text-xl font-bold mb-2 border-b pb-1">Experience</h2>
-      <div class="text-sm mb-4">
-        <p class="font-semibold text-gray-800">Innostax Software Labs — Software Developer</p>
-        <p class="text-xs text-gray-500">Jan 2022 – Present</p>
-        <ul class="list-disc ml-5 mt-1 text-gray-700">
-          <li>Built and maintained modern frontend solutions</li>
-          <li>Collaborated closely with backend teams for integration</li>
-          <li>Improved performance and UX with responsive designs</li>
-        </ul>
+<main class="container">
+
+  <p class="board-sign">Guild Hall · Quest Board</p>
+
+  <div class="board">
+    <div class="board-inner">
+
+      <section id="about" class="card note hero" aria-label="About">
+        <div class="hstack gap-6">
+          <div class="avatar-frame">
+            <svg width="128" height="128" viewBox="0 0 16 16" role="img" aria-label="Pixel-art avatar of Rajat" shape-rendering="crispEdges"><rect x="5" y="1" width="6" height="1" fill="#2b2118"/><rect x="4" y="2" width="8" height="1" fill="#2b2118"/><rect x="3" y="3" width="10" height="1" fill="#2b2118"/><rect x="3" y="4" width="2" height="1" fill="#2b2118"/><rect x="5" y="4" width="6" height="1" fill="#e3a979"/><rect x="11" y="4" width="2" height="1" fill="#2b2118"/><rect x="3" y="5" width="1" height="1" fill="#2b2118"/><rect x="4" y="5" width="8" height="1" fill="#e3a979"/><rect x="12" y="5" width="1" height="1" fill="#2b2118"/><rect x="3" y="6" width="1" height="1" fill="#e3a979"/><rect x="4" y="6" width="3" height="1" fill="#2b2118"/><rect x="7" y="6" width="2" height="1" fill="#e3a979"/><rect x="9" y="6" width="3" height="1" fill="#2b2118"/><rect x="12" y="6" width="1" height="1" fill="#e3a979"/><rect x="3" y="7" width="1" height="1" fill="#e3a979"/><rect x="4" y="7" width="8" height="1" fill="#2b2118"/><rect x="5" y="7" width="1" height="1" fill="#8ecbea"/><rect x="10" y="7" width="1" height="1" fill="#8ecbea"/><rect x="12" y="7" width="1" height="1" fill="#e3a979"/><rect x="3" y="8" width="1" height="1" fill="#e3a979"/><rect x="4" y="8" width="3" height="1" fill="#2b2118"/><rect x="7" y="8" width="2" height="1" fill="#e3a979"/><rect x="9" y="8" width="3" height="1" fill="#2b2118"/><rect x="12" y="8" width="1" height="1" fill="#e3a979"/><rect x="3" y="9" width="4" height="1" fill="#e3a979"/><rect x="7" y="9" width="2" height="1" fill="#c4885a"/><rect x="9" y="9" width="4" height="1" fill="#e3a979"/><rect x="4" y="10" width="2" height="1" fill="#e3a979"/><rect x="6" y="10" width="4" height="1" fill="#9c4a32"/><rect x="10" y="10" width="2" height="1" fill="#e3a979"/><rect x="5" y="11" width="6" height="1" fill="#e3a979"/><rect x="6" y="12" width="1" height="1" fill="#e3a979"/><rect x="7" y="12" width="2" height="1" fill="#c4885a"/><rect x="9" y="12" width="1" height="1" fill="#e3a979"/><rect x="3" y="13" width="4" height="1" fill="#2f6fb0"/><rect x="7" y="13" width="2" height="1" fill="#f4efe4"/><rect x="9" y="13" width="4" height="1" fill="#2f6fb0"/><rect x="2" y="14" width="5" height="1" fill="#2f6fb0"/><rect x="7" y="14" width="2" height="1" fill="#f4efe4"/><rect x="9" y="14" width="5" height="1" fill="#2f6fb0"/><rect x="2" y="15" width="2" height="1" fill="#2f6fb0"/><rect x="4" y="15" width="1" height="1" fill="#23578c"/><rect x="5" y="15" width="6" height="1" fill="#2f6fb0"/><rect x="11" y="15" width="1" height="1" fill="#23578c"/><rect x="12" y="15" width="2" height="1" fill="#2f6fb0"/></svg>
+          </div>
+          <div>
+            <h1>Rajat Verma</h1>
+            <p class="role">Frontend-focused full-stack engineer</p>
+          </div>
+        </div>
+        <p class="tagline">I build fast, secure web products — and lead the team that ships them.</p>
+        <p class="prose">Nearly six years across fintech, payments, banking, BaaS, tax, travel and event management. React, Next.js and Angular are home base; these days I'm also leveling up on the backend with Node.js, Go and Python.</p>
+        <p class="meta facts">B.Tech CS · ~6 yrs exp · Leads a team of 6 · New Delhi, IN</p>
+      </section>
+
+      <div class="row">
+        <section class="col-6 card note cream" style="--tilt: -0.7deg" aria-labelledby="now-h">
+          <h2 id="now-h" class="label">Now</h2>
+          <p class="now-title">SDE2 / Project Lead <span>@ Innostax Software Labs</span></p>
+          <p class="prose">Leading the V2 rebuild of Pegasus, a horse-show management platform on Next.js and Fastify that serves 1–2k users and peaks at 4–5k during live events. Mentoring, reviewing PRs and setting engineering standards — still hands-on every sprint.</p>
+          <p class="side-quest">
+            <svg width="16" height="16" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="1" y="3" width="4" height="2" fill="#1d6b63"/><rect x="4" y="1" width="1" height="6" fill="#1d6b63"/><rect x="5" y="2" width="1" height="4" fill="#1d6b63"/><rect x="6" y="3" width="1" height="2" fill="#1d6b63"/></svg>
+            Side quest: backend &amp; systems work in Go and Python
+          </p>
+        </section>
+
+        <section class="col-6 card note yellow" style="--tilt: 0.6deg" aria-labelledby="builds-h">
+          <h2 id="builds-h" class="label">Featured builds</h2>
+          <ul class="unstyled vstack build-list">
+            <li>
+              <a href="workshop.html#pegasus">Pegasus</a>
+              <p>Horse-show platform: drag-and-drop stall maps, RBAC and super-admin tools, with WorkOS, Stripe, Resend and Sentry wired in.</p>
+            </li>
+            <li>
+              <a href="workshop.html#bancstac">BancStac</a>
+              <p>Banking &amp; payments: 25% faster page loads, 15% fewer payment failures, PCI DSS Level 1 fixes across 10+ modules.</p>
+            </li>
+            <li>
+              <a href="workshop.html#tava-js">Tava JS</a>
+              <p>Backend-as-a-Service CLI on AWS Lambda, EC2 and S3; GitHub Actions CI/CD cut deploy time by 40%.</p>
+            </li>
+          </ul>
+          <p class="mt-4"><a href="workshop.html">All projects at the Workshop →</a></p>
+        </section>
       </div>
-      <div class="text-sm">
-        <p class="font-semibold text-gray-800">WorkFlux Interactive — Frontend Intern</p>
-        <p class="text-xs text-gray-500">Dec 2018 – Nov 2019</p>
+
+      <div class="row">
+        <section class="col-7 card note blue toolbelt" style="--tilt: 0.4deg" aria-labelledby="tools-h">
+          <h2 id="tools-h" class="label">Toolbelt</h2>
+
+          <h3 class="label small">Frontend</h3>
+          <div class="hstack chips">
+            <span class="badge chip">React</span>
+            <span class="badge chip">Next.js</span>
+            <span class="badge chip">Angular</span>
+            <span class="badge chip">TypeScript</span>
+            <span class="badge chip">Tailwind</span>
+            <span class="badge chip">Zustand</span>
+          </div>
+
+          <h3 class="label small">Backend &amp; cloud</h3>
+          <div class="hstack chips">
+            <span class="badge chip be">Node.js</span>
+            <span class="badge chip be">Fastify</span>
+            <span class="badge chip be">AWS Lambda</span>
+            <span class="badge chip be">EC2 · S3</span>
+            <span class="badge chip be">SQL</span>
+            <span class="badge chip be">GitHub Actions</span>
+          </div>
+
+          <h3 class="label small">Leveling up</h3>
+          <div class="vstack gap-2">
+            <div class="hstack xp-row">
+              <span class="badge chip learning">Go</span>
+              <div class="xp" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="meta">In training</span>
+            </div>
+            <div class="hstack xp-row">
+              <span class="badge chip learning">Python</span>
+              <div class="xp" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
+              <span class="meta">In training</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-5 card note pink" style="--tilt: -0.5deg; --pin: var(--teal)" aria-labelledby="ach-h">
+          <h2 id="ach-h" class="label">Achievements unlocked</h2>
+          <ul class="unstyled vstack achievements">
+            <li class="achievement">
+              <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="1" y="1" width="6" height="1" fill="#e0a526"/><rect x="0" y="1" width="1" height="2" fill="#e0a526"/><rect x="7" y="1" width="1" height="2" fill="#e0a526"/><rect x="2" y="2" width="4" height="2" fill="#e0a526"/><rect x="3" y="4" width="2" height="2" fill="#c78a12"/><rect x="2" y="6" width="4" height="1" fill="#6b3d1f"/></svg>
+              <div><p>Client Hero</p><p class="meta">Innostax · 2023</p></div>
+            </li>
+            <li class="achievement">
+              <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="3" y="0" width="2" height="2" fill="#e0a526"/><rect x="0" y="2" width="8" height="2" fill="#e0a526"/><rect x="1" y="4" width="6" height="1" fill="#e0a526"/><rect x="1" y="5" width="2" height="2" fill="#c78a12"/><rect x="5" y="5" width="2" height="2" fill="#c78a12"/></svg>
+              <div><p>Fast Start Champion</p><p class="meta">Innostax · 2022</p></div>
+            </li>
+            <li class="achievement">
+              <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="3" y="0" width="2" height="1" fill="#1d6b63"/><rect x="2" y="1" width="4" height="1" fill="#1d6b63"/><rect x="1" y="2" width="6" height="1" fill="#1d6b63"/><rect x="3" y="3" width="2" height="5" fill="#1d6b63"/></svg>
+              <div><p>Two promotions</p><p class="meta">Associate → SDE1 → SDE2 / Lead</p></div>
+            </li>
+            <li class="achievement">
+              <svg width="28" height="28" viewBox="0 0 8 8" aria-hidden="true" shape-rendering="crispEdges"><rect x="1" y="1" width="6" height="5" fill="#2f6fb0"/><rect x="2" y="2" width="4" height="1" fill="#fff"/><rect x="2" y="4" width="3" height="1" fill="#fff"/><rect x="3" y="6" width="2" height="2" fill="#a8321c"/></svg>
+              <div><p>Claude Academy</p><p class="meta">Claude 101 · Claude Code · 2026</p></div>
+            </li>
+          </ul>
+        </section>
       </div>
-    </section>
 
-    <section class="bg-white rounded-xl p-6 my-6 shadow-sm fade-slide">
-      <h2 class="text-xl font-bold mb-2 border-b pb-1">Skills</h2>
-      <ul class="space-y-4 text-sm">
-        <li class="flex justify-between items-center">
-          <span>HTML</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️⭐️⭐️</span>
-        </li>
-        <li class="flex justify-between items-center">
-          <span>CSS (Tailwind, Bootstrap)</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️⭐️</span>
-        </li>
-        <li class="flex justify-between items-center">
-          <span>JavaScript</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️⭐️⭐️</span>
-        </li>
-        <li class="flex justify-between items-center">
-          <span>React</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️⭐️</span>
-        </li>
-        <li class="flex justify-between items-center">
-          <span>Angular</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️</span>
-        </li>
-        <li class="flex justify-between items-center">
-          <span>Java</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️</span>
-        </li>
-        <li class="flex justify-between items-center">
-          <span>SQL</span>
-          <span class="text-yellow-400">⭐️⭐️⭐️⭐️</span>
-        </li>
-      </ul>
-    </section>
+      <section id="quest-log" class="card note quest-log" style="--pin: var(--gold)" aria-labelledby="log-h">
+        <h2 id="log-h" class="label">Quest log</h2>
+        <ol class="unstyled quests">
+          <li>
+            <p class="meta">2018–19</p>
+            <h3>Workflux Interactive</h3>
+            <p>Intern → Frontend Web Developer. 50+ Figma mockups shipped as responsive UI.</p>
+          </li>
+          <li>
+            <p class="meta">2019</p>
+            <h3>B.Tech, Computer Science</h3>
+            <p>Mahavir Swami Institute of Technology.</p>
+          </li>
+          <li style="--marker: var(--note-yellow)">
+            <p class="meta">2022</p>
+            <h3>Joined Innostax</h3>
+            <p>Associate SE → SDE1 in six months. Travelstart, PlentyExchange, BancStac.</p>
+          </li>
+          <li style="--marker: var(--pin-red)">
+            <p class="meta">2025</p>
+            <h3>SDE2 / Project Lead</h3>
+            <p>Leading a 6-person team on Pegasus V2.</p>
+          </li>
+          <li class="next">
+            <p class="meta">Next</p>
+            <h3>Full-stack depth</h3>
+            <p>Services in Go and Python alongside the frontend craft.</p>
+          </li>
+        </ol>
+      </section>
 
-    <!-- <section class="bg-white rounded-xl p-6 my-6 shadow-sm fade-slide">
-      <h2 class="text-xl font-bold mb-2 border-b pb-1">Projects</h2>
-      <ul class="space-y-4 text-sm">
-        <li>
-          <a href="https://github.com/rjtvr/url-checker" target="_blank" class="block p-4 rounded-lg border hover:shadow-lg transition">
-            🔗 <span class="font-medium text-gray-800">URL Checker Tool</span><br />
-            <span class="text-gray-500 text-xs">Multi-URL tester with concurrency, headers & payload support</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/rjtvr/ocr-scanner" target="_blank" class="block p-4 rounded-lg border hover:shadow-lg transition">
-            🔗 <span class="font-medium text-gray-800">OCR Scanner</span><br />
-            <span class="text-gray-500 text-xs">Fast, accurate OCR tool built from scratch</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://rjtvr.dev/qr-pay" target="_blank" class="block p-4 rounded-lg border hover:shadow-lg transition">
-            🔗 <span class="font-medium text-gray-800">QR Payment Webpage</span><br />
-            <span class="text-gray-500 text-xs">Supports LankaQR and Alipay with dynamic QR display</span>
-          </a>
-        </li>
-      </ul>
-    </section> -->
-  </main>
+    </div>
+  </div>
 
-  <footer class="text-center text-xs text-gray-500 py-8 fade-slide">
-    © 2025 Rajat Verma. All rights reserved.
-  </footer>
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" class="label">Send a carrier pigeon</h2>
+    <p>Have a project, a role or a question? Drop a note.</p>
+    <div class="hstack">
+      <a href="mailto:rajatverma1963@gmail.com" class="button primary">Email me</a>
+      <a href="https://linkedin.com/in/rajat-vrma" class="button" rel="noopener">LinkedIn</a>
+      <a href="workshop.html" class="button">See the Workshop</a>
+    </div>
+  </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll(".fade-slide");
+  <p class="site-footer">Built pixel by pixel · New Delhi · © 2026 Rajat Verma</p>
+</main>
 
-      const show = el => el.classList.add("show");
-
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              show(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-
-        elements.forEach(el => {
-          el.dataset.animate = "true";
-          observer.observe(el);
-        });
-      } else {
-        elements.forEach(show);
-      }
-    });
-  </script>
 </body>
 </html>

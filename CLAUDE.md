@@ -4,16 +4,19 @@ Personal portfolio of Rajat Verma, live at https://rjtvr.github.io/.
 
 ## Site
 
-- The whole site is `index.html`: one self-contained page. Keep markup, styles and the scroll-animation script inside it.
-- Styling is Tailwind via the Play CDN (`cdn.tailwindcss.com`) plus the Inter font from Google Fonts. There is no build step, `package.json` or bundler; write Tailwind utility classes directly in the markup.
-- Preview by opening `index.html` in a browser: it has no local file dependencies.
-- The Projects section is intentionally commented out. Leave it hidden unless asked to show it.
+- Two static pages in a pixel-art "Town Square" theme: `index.html` (home) and `workshop.html` (all projects). Both share `assets/site.css` and `assets/favicon.svg`, and repeat the same `<head>` and header nav; keep those in sync across both pages.
+- Styling is [Oat](https://oat.ink) 1.0.0 from jsDelivr, pinned with an SRI hash, plus `assets/site.css`. Oat styles semantic HTML and puts its CSS in cascade layers, so the unlayered rules in `site.css` win without extra specificity. Theme it by overriding Oat's variables (`--background`, `--primary`, `--font-sans`, ...) in the `:root` block of `site.css`. Oat's JS is left out because no page uses tabs, dropdowns or toasts; add it only alongside one of those.
+- Reuse the existing classes (`card note`, `badge chip`, `a.button`, `label`, `meta`, Oat's `row`/`col-*`, `hstack`/`vstack`) for new content; the design is light-only (`color-scheme: light`).
+- Fonts are Pixelify Sans and Silkscreen from Google Fonts. There is no build step, `package.json` or bundler.
+- Preview by opening `index.html` in a browser.
+- Content comes from Rajat's resume. `docs/` (resume PDF and design mockup) is gitignored: it is source material, never published, because the resume includes a phone number.
+- The Workshop's "Side quests" section for personal Go/Python projects is left out until real projects exist.
 
 ## Deployment
 
 GitHub Pages serves the repo root of `master` at `rjtvr.github.io`, with no custom domain. A push to `master` is a deploy. Every file in the repo is publicly served, so keep the repo to portfolio files only.
 
-The `rjtvr.dev` custom domain was removed on purpose: keep the repo free of a `CNAME` file.
+The `rjtvr.com` custom domain was removed on purpose: keep the repo free of a `CNAME` file.
 
 ## Commit conventions
 
