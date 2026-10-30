@@ -88,6 +88,8 @@ Shared rules:
 - **Oat's `.hstack` wraps** by default. Set `flex-wrap: nowrap` on any `.hstack` turned into a column, or its items shrink to their content width (the phone menu needed this).
 - **Narrow phones:** the hero name column is a size container (`hero-name`). When it is narrower than "Verma" (about 104px, so up to roughly 330px viewports), `.surname` is hidden visually, so the heading reads "Rajat" rather than breaking mid-word. Screen readers still hear the full name. If the h1 font size changes, re-measure the threshold.
 
+- **Scrollbar shift:** the splash locks scrolling (`overflow: hidden`), which hides desktop scrollbars. `html { scrollbar-gutter: stable }` keeps the scrollbar's space reserved, so the page doesn't jump sideways when the lock releases. Keep it while anything toggles page scrolling.
+
 ## Mockup source
 
 `docs/Portfolio_mockup.html` (gitignored, along with the resume PDF) is a self-unpacking bundle. Each page sits gzip+base64-encoded in the `__bundler/manifest` script tag, and its HTML is a JSON string in that page's `__bundler/template` tag. Decode them to read the design. The bundle has four frames: desktop Home (1280px), desktop Workshop, mobile Home (390px) and mobile Workshop.

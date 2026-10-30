@@ -51,6 +51,12 @@
   --grid-gap: 28px;
 }
 
+/* Always reserve the scrollbar's space, so the page doesn't shift sideways
+   when the splash screen's scroll lock releases (desktop scrollbars). */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   min-height: 100vh;
   padding-bottom: 48px;
