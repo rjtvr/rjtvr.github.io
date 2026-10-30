@@ -19,6 +19,7 @@ The design is a village **Town Square** with a **Quest Board**. Keep these names
 | Chip | A skill tag with a coloured drop shadow (blue = frontend, teal = backend) | `.badge.chip`, `.chip.be` |
 | Leveling up | Skills in training (Go, Python), shown with an XP bar | `.xp-row`, `.xp` |
 | Quest log | The career timeline; the dashed last entry is "Next" | `.quests`, `li.next` |
+| Lost in the Woods | The 404 page: a pinned note with a pixel-drawn "404" and a way back to the Town Square | `404.html`, `.lost` |
 | Contact sign | "Send a carrier pigeon" panel below the board | `.contact` |
 | Side quests | Personal Go/Python projects. In the mockup, intentionally not built yet | (none) |
 | Splash screen | "Town Square" sign over a pinned note with the avatar, name and a segmented loading bar, shown on the home page before the board | `.splash-screen`, `.show-splash` |
