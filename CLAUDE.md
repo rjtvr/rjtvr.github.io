@@ -4,7 +4,8 @@ Personal portfolio of Rajat Verma, live at https://rjtvr.github.io/.
 
 ## Site
 
-- Two static pages in a pixel-art "Town Square" theme: `index.html` (home) and `workshop.html` (all projects), sharing `assets/site.css` and `assets/favicon.svg`. Styling is [Oat](https://oat.ink) plus `site.css`; there is no build step, `package.json` or bundler.
+- Two static pages in a pixel-art "Town Square" theme: `index.html` (home) and `workshop.html` (all projects), sharing `assets/favicon.svg` and the site stylesheet. Styling is [Oat](https://oat.ink) plus that stylesheet; there is no `package.json` or bundler.
+- **Stylesheet: edit `assets/site.css`, ship `assets/site.min.css`.** `site.css` is the readable source and the only file to edit; both pages link `site.min.css`. After any change to `site.css`, regenerate the minified file in the same commit with `python scripts/minify-css.py` (Python 3, no dependencies). Never hand-edit `site.min.css`. CI fails a pull request whose `site.min.css` is stale (`.github/workflows/css.yml`, which runs `python scripts/minify-css.py --check`).
 - **Read [DESIGN.md](DESIGN.md) before changing the design, layout or avatar.** It holds the vocabulary, tokens, class map, phone layout rules, gotchas and past decisions; record new design decisions there.
 - Preview by opening `index.html` in a browser.
 - Content comes from Rajat's resume. `docs/` (resume PDF and design mockup) is gitignored: it is source material, never published, because the resume includes a phone number.

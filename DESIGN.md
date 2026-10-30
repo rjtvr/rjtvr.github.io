@@ -25,6 +25,7 @@ The design is a village **Town Square** with a **Quest Board**. Keep these names
 ## Stack
 
 - [Oat](https://oat.ink) 1.0.0 CSS from jsDelivr, pinned with SRI. Oat styles semantic HTML and puts everything in cascade layers, so unlayered rules in `site.css` win without extra specificity. Theme Oat through its variables in the `:root` block of `site.css`, never by editing Oat.
+- Pages load `assets/site.min.css`, generated from `site.css`. Edit only `site.css`, then regenerate (see CLAUDE.md).
 - Oat pieces in use: `.container`, `.row` / `.col-*` (12-column grid, stacks below 769px), `.hstack` / `.vstack`, `.card`, `.badge`, `a.button`, `ul.unstyled`, `gap-*`, `mt-*`. Oat's JS is not loaded.
 - Fonts: Pixelify Sans (body, headings) and Silkscreen (caps labels and metadata, via `--font-mono`), both from Google Fonts.
 - Light-only: `color-scheme: light` pins Oat's `light-dark()` values. There is no dark theme.
