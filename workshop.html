@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop — Rajat Verma</title>
+  <meta name="description" content="Things Rajat Verma has built: Pegasus, BancStac, Tava JS, PlentiExchange, Travelstart B2B and early work at Workflux Interactive.">
+  <meta property="og:title" content="Workshop — Rajat Verma">
+  <meta property="og:description" content="Five client products at Innostax, plus where it all started.">
+  <meta property="og:url" content="https://rjtvr.github.io/workshop.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@knadh/oat@1.0.0/oat.min.css" integrity="sha384-W8Z3f/RFchsEaPcbktneR+q+yniOOmbyw/5T4SLu439RBvA92XMmMoZWdjkpDQhH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/site.min.css">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <nav class="container site-nav hstack justify-between" aria-label="Main">
+    <a href="index.html" class="brand">
+      <svg width="24" height="24" viewBox="0 0 12 12" aria-hidden="true" shape-rendering="crispEdges"><rect x="5" y="1" width="2" height="1" fill="#a8321c"/><rect x="4" y="2" width="4" height="1" fill="#a8321c"/><rect x="3" y="3" width="6" height="1" fill="#a8321c"/><rect x="2" y="4" width="8" height="1" fill="#a8321c"/><rect x="1" y="5" width="10" height="1" fill="#a8321c"/><rect x="2" y="6" width="8" height="5" fill="#f2d49b"/><rect x="5" y="8" width="2" height="3" fill="#6b3d1f"/><rect x="3" y="7" width="1" height="1" fill="#4a90c8"/><rect x="8" y="7" width="1" height="1" fill="#4a90c8"/></svg>
+      Town Square
+    </a>
+    <div class="nav-links hstack current-only-sm">
+      <a href="index.html#about">About</a>
+      <a href="workshop.html" aria-current="page">Workshop</a>
+      <a href="index.html#quest-log">Quest log</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <p class="board-sign">Workshop · All projects</p>
+
+  <div class="board">
+    <div class="board-inner shelves">
+
+      <div class="workshop-head">
+        <div>
+          <h1>Things I've built</h1>
+          <p>Five client products at Innostax, plus where it all started.</p>
+        </div>
+        <a href="index.html" class="button hide-sm">← Back to Town Square</a>
+      </div>
+
+      <div class="row projects">
+
+        <article id="pegasus" class="col-4 card project">
+          <div class="hstack justify-between gap-2">
+            <span class="tag" style="background: var(--note-pink)">Event management</span>
+            <span class="meta" style="font-size: 11px; color: var(--accent)">Leading · V2</span>
+          </div>
+          <h2>Pegasus</h2>
+          <p>Horse-show management platform serving 1–2k users, peaking at 4–5k during live events.</p>
+          <ul>
+            <li>Directing the team rebuilding V2</li>
+            <li>Drag-and-drop stall maps, RBAC and super-admin tools</li>
+            <li>WorkOS, Stripe, Resend and Sentry integrations</li>
+          </ul>
+          <div class="hstack chips small">
+            <span class="badge chip small">Next.js</span>
+            <span class="badge chip small be">Fastify</span>
+          </div>
+        </article>
+
+        <article id="bancstac" class="col-4 card project">
+          <div class="hstack">
+            <span class="tag" style="background: var(--note-blue)">Banking · Payments</span>
+          </div>
+          <h2>BancStac</h2>
+          <div class="hstack stats">
+            <div class="stat"><strong>−25%</strong><span>Page load</span></div>
+            <div class="stat"><strong>−15%</strong><span>Payment fails</span></div>
+            <div class="stat"><strong>95%</strong><span>Browser compat</span></div>
+          </div>
+          <ul>
+            <li>PCI DSS Level 1 remediation across 10+ modules</li>
+            <li>Token fingerprinting and hybrid encryption for Quick Web</li>
+            <li>EFTEX bank onboarding and DCC frontend</li>
+          </ul>
+          <div class="hstack chips small">
+            <span class="badge chip small">React</span>
+            <span class="badge chip small be">Java</span>
+          </div>
+        </article>
+
+        <article id="tava-js" class="col-4 card project">
+          <div class="hstack">
+            <span class="tag" style="background: var(--note-mint)">Backend-as-a-Service</span>
+          </div>
+          <h2>Tava JS</h2>
+          <p>A CLI that generates ready-to-run frontend and backend apps and deploys them.</p>
+          <ul>
+            <li>AWS Lambda workflows; deploys via EC2, S3 and CodeDeploy</li>
+            <li>GitHub Actions CI/CD: 40% faster deploys</li>
+            <li>Release frequency doubled</li>
+          </ul>
+          <div class="hstack chips small">
+            <span class="badge chip small be">Node.js</span>
+            <span class="badge chip small be">AWS</span>
+            <span class="badge chip small">React</span>
+          </div>
+        </article>
+
+        <article id="PlentiExchange" class="col-4 card project">
+          <div class="hstack">
+            <span class="tag" style="background: var(--note-yellow)">Tax · White-label</span>
+          </div>
+          <h2>PlentiExchange</h2>
+          <p>React frontend built from scratch, from folder structure to a multistep wizard.</p>
+          <ul>
+            <li>Rebranded and adapted for two clients</li>
+            <li>Bulk record export and custom analytics</li>
+          </ul>
+          <div class="hstack chips small">
+            <span class="badge chip small">React</span>
+            <span class="badge chip small be">.NET</span>
+          </div>
+        </article>
+
+        <article id="travelstart" class="col-4 card project">
+          <div class="hstack">
+            <span class="tag" style="background: var(--note-blue)">Travel · Flights</span>
+          </div>
+          <h2>Travelstart B2B</h2>
+          <p>Flight-booking platform serving both consumer and business products.</p>
+          <ul>
+            <li>Flight search migrated into a shared B2C/B2B component</li>
+            <li>Ozow payment gateway integration</li>
+            <li>20% fewer post-launch bug reports</li>
+          </ul>
+          <div class="hstack chips small">
+            <span class="badge chip small">Angular</span>
+          </div>
+        </article>
+
+        <article id="workflux" class="col-4 card project cream">
+          <div class="hstack justify-between gap-2">
+            <span class="tag" style="background: var(--note-pink)">Where it started</span>
+            <span class="meta" style="font-size: 11px">2018–19</span>
+          </div>
+          <h2>Workflux Interactive</h2>
+          <p>Theme templates and responsive interfaces, straight from Figma.</p>
+          <ul>
+            <li>50+ Figma mockups shipped to production</li>
+            <li>30+ reusable UI components</li>
+            <li>20% increase in average time-on-site</li>
+          </ul>
+          <div class="hstack chips small">
+            <span class="badge chip small">JavaScript</span>
+            <span class="badge chip small">HTML · CSS</span>
+          </div>
+        </article>
+
+      </div>
+
+      <a href="index.html" class="button show-sm back-bottom">← Back to Town Square</a>
+
+    </div>
+  </div>
+
+  <p class="site-footer">Built pixel by pixel · New Delhi<span class="hide-sm"> · </span><br class="show-sm">© 2026 Rajat Verma</p>
+</main>
+
+</body>
+</html>

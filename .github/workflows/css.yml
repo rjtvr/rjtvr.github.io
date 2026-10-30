@@ -1,0 +1,17 @@
+name: CSS
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  minified-in-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Fails when assets/site.min.css was not regenerated after editing assets/site.css.
+      - run: python3 scripts/minify-css.py --check
