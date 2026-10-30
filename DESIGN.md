@@ -95,4 +95,5 @@ Mockup inline styles map to classes here. Port new elements as named classes in 
 | Go/Python shown as "Leveling up" | Leaving them off | Framed as learning in progress, not claimed experience |
 | Rise-and-blink intro on load | Pointer-following eyes, hand wave, looping bob/blink | The owner tried and rejected each in turn; they wanted one normal animation on first load |
 | 16×16 avatar | 32×32 redraw with display-scale sizing | Tried, then reverted at the owner's request |
+| Pixel-drawn SVG digits for Workshop stat numbers (5×7 glyphs, `role="img"` + `aria-label`) | Bold or larger Pixelify Sans, Silkscreen | Pixelify's "5" reads as "S" at stat size, and Silkscreen overflows the desktop tiles; SVG keeps both fonts unchanged and stays crisp. New stat values need their glyphs drawn |
 | Side quests section omitted | Shipping the mockup's placeholders | No real Go/Python projects yet |

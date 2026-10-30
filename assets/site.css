@@ -689,10 +689,17 @@ a.button.primary:hover {
   border: 2px solid var(--ink);
 }
 
+/* Stat numbers are pixel-drawn SVG (5x7 glyphs, 3px per art pixel): at this
+   size Pixelify Sans renders "5" almost like "S". */
 .stat strong {
   display: block;
-  font-size: 22px;
-  font-weight: 700;
+  margin: 2px 0 6px;
+}
+
+.stat strong svg {
+  display: block;
+  height: 21px;
+  width: auto;
 }
 
 .stat span {
@@ -1162,8 +1169,8 @@ a.button.primary:hover {
     text-align: center;
   }
 
-  .stat strong {
-    font-size: 20px;
+  .stat strong svg {
+    margin-inline: auto;
   }
 
   .stat span {
