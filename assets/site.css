@@ -597,6 +597,30 @@ a.button.primary:hover {
   margin-top: 20px;
 }
 
+/* Placeholder until the resume PDF (without the phone number) is published:
+   no link, dashed like the other "not yet" elements (Leveling up chips, the
+   Next quest). Swap it for a download link when the PDF is ready. */
+a.button.resume-soon {
+  gap: 8px;
+  border-style: dashed;
+  box-shadow: none;
+  color: var(--ink-soft);
+  cursor: not-allowed;
+  opacity: 1; /* Oat fades [aria-disabled]; keep the label readable. */
+}
+
+a.button.resume-soon:hover {
+  background: var(--paper);
+  color: var(--ink-soft);
+}
+
+.soon-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--teal);
+}
+
 .site-footer {
   margin: 32px 0 0;
   font-family: var(--font-mono);
