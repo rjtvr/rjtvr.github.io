@@ -249,6 +249,32 @@ main.container {
   border: 3px solid var(--ink);
 }
 
+/* Avatar: idle bob + blink in CSS; index.html's script moves .av-head and
+   .av-eyes toward the pointer in SVG units (1px = one art pixel). Every
+   motion snaps (step timing) to stay pixel-art. */
+.avatar {
+  overflow: hidden;
+}
+
+.av-bob {
+  animation: av-bob 3.2s step-end infinite;
+}
+
+.av-eyes {
+  animation: av-blink 4.6s step-end infinite;
+}
+
+@keyframes av-bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(0.5px); }
+}
+
+@keyframes av-blink {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+  94% { opacity: 1; }
+}
+
 .hero h1 {
   margin: 0;
   font-size: clamp(36px, 5vw, 48px);
@@ -1136,5 +1162,10 @@ a.button.primary:hover {
 @media (prefers-reduced-motion: reduce) {
   .card.note {
     transform: none;
+  }
+
+  .av-bob,
+  .av-eyes {
+    animation: none;
   }
 }
