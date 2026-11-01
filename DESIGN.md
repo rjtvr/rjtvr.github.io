@@ -21,7 +21,7 @@ The design is a village **Town Square** with a **Quest Board**. Keep these names
 | Quest log | The career timeline; the dashed last entry is "Next" | `.quests`, `li.next` |
 | Lost in the Woods | The 404 page: a pinned note with a pixel-drawn "404" and a way back to the Town Square | `404.html`, `.lost` |
 | Contact sign | "Send a carrier pigeon" panel below the board | `.contact` |
-| Side quests | Personal Go/Python projects. In the mockup, intentionally not built yet | (none) |
+| Side quests | Personal GitHub builds: a dashed blue panel on the Workshop below the project cards, holding quest cards (language, status tag, name, one line, chips, repo link or "Repo coming soon") | `.side-quests`, `.quest-cards`, `.quest-card` |
 | Splash screen | "Town Square" sign over a pinned note with the avatar, name and a segmented loading bar, shown on the home page before the board | `.splash-screen`, `.show-splash` |
 
 ## Stack
@@ -50,7 +50,7 @@ Shared rules:
 ## Layout
 
 - The home page board stacks: hero note, then a `.row` with Now + Featured builds (`col-6` each), a `.row` with Toolbelt + Achievements (`col-7` / `col-5`), then the Quest log note. The contact sign and footer sit below the board.
-- Workshop: a heading row (`.workshop-head`), then `.row.projects` with `col-4` project cards. Cards are three across on desktop, two at 769–1080px, one below that.
+- Workshop: a heading row (`.workshop-head`), then `.row.projects` with `col-4` project cards, then the Side quests panel with its own `.row.quest-cards`. Both grids are three across on desktop, two at 769–1080px, one below that. Don't name the quest grid `.quests`: that is the Quest log's class.
 - Featured builds link to Workshop cards by id (`workshop.html#pegasus`). Keep card ids lowercase and hyphenated.
 - The two pages repeat the same `<head>` and header markup; change both together.
 - Link previews (LinkedIn, social) use `assets/og-image.png`, a 1200×627 screenshot of the top of the home page, set as `og:image` on both pages. Re-take it when the hero changes.
@@ -111,4 +111,5 @@ Mockup inline styles map to classes here. Port new elements as named classes in 
 | Splash screen once per session, skippable | Showing it on every load, unskippable | The owner asked for a 5s splash; limiting it keeps return visits and in-site navigation fast |
 | Resume as a split button: "View resume" (new tab) + attached download square, pixel-drawn icons | Two separate buttons; an in-page PDF preview | Fits the contact row on desktop; in-page PDF embeds fail on Android Chrome and show one page on iOS |
 | Name in uppercase Pixelify Sans ("RAJAT VERMA", via `text-transform`; markup stays "Rajat Verma") | Mixed-case Pixelify; Silkscreen; Jersey 10, Tiny5 or Micro 5 for the name | Pixelify's lowercase "j" is cap height with no descender and read as a capital in "Rajat". Caps keep one font and no extra load. Silkscreen is too wide and is the label font; Jersey 10 adds a third font for one word |
-| Side quests section omitted | Shipping the mockup's placeholders | No real Go/Python projects yet |
+| Side quest cards generated from `data/side-quests.json` by a Python script into marked lines of `workshop.html`, checked in CI | Fetching the JSON with JavaScript at runtime; Jekyll `_data` files | The page stays plain static HTML: works without JS, is indexed by search engines, and previews by opening the file (a runtime fetch is blocked on `file://`, and Liquid needs Ruby to preview). Client project cards stay hand-written: they rarely change and BancStac uses pixel-drawn SVG stats |
+| Side quests as a dashed panel of smaller, flat cards below the Workshop projects, with a link to the GitHub profile | Mixing personal repos into the client project cards | Keeps client work and personal builds apart; dashed matches the other "in progress" elements. Private repos show "Repo coming soon" as plain text, not a dead link |

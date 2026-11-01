@@ -1,0 +1,42 @@
+{
+  "_help": "Side quests on workshop.html. After editing, run: python scripts/build-side-quests.py. Fields: id (lowercase-hyphenated, the card's #anchor), name, language, status (short tag), summary (one sentence), chips (label, plus \"backend\": true for a teal shadow), repo (GitHub URL, or null to show 'Repo coming soon'). Cards render in this order.",
+  "quests": [
+    {
+      "id": "network-inspector",
+      "name": "Network Capture Inspector",
+      "language": "TypeScript",
+      "status": "Public",
+      "summary": "Chrome extension that records a tab's network requests and reviews them for security, performance and client context.",
+      "chips": [
+        { "label": "React" },
+        { "label": "Chrome MV3" },
+        { "label": "Vite" }
+      ],
+      "repo": "https://github.com/rjtvr/network-and-client-inspector"
+    },
+    {
+      "id": "dot-snake",
+      "name": "Dot Snake",
+      "language": "JavaScript",
+      "status": "Playable",
+      "summary": "Snake on a dot grid in one HTML file: no build step, light and dark themes, keyboard and touch, and a secret code.",
+      "chips": [
+        { "label": "JavaScript" },
+        { "label": "HTML · CSS" }
+      ],
+      "repo": null
+    },
+    {
+      "id": "tales-beyond-the-frame",
+      "name": "Tales Beyond the Frame",
+      "language": "Python",
+      "status": "MVP",
+      "summary": "Pipeline that turns bilingual stories into narrated, illustrated YouTube videos.",
+      "chips": [
+        { "label": "Python", "backend": true },
+        { "label": "FFmpeg", "backend": true }
+      ],
+      "repo": null
+    }
+  ]
+}
