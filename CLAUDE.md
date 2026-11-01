@@ -10,7 +10,8 @@ Personal portfolio of Rajat Verma, live at https://rjtvr.github.io/.
 - `404.html` is the "Lost in the Woods" page GitHub Pages serves for any missing path, at that path. Keep every URL in it root-relative (`/assets/...`, `/`). Preview it through a local server (e.g. VS Code Live Server), not as a file.
 - Search engines: `index.html` carries Person structured data (JSON-LD) and both pages a canonical link; `sitemap.xml` and `robots.txt` sit at the root. When a page's content changes, update its `<lastmod>` in `sitemap.xml`; add new pages there too.
 - Preview by opening `index.html` in a browser.
-- Content comes from Rajat's resume. `docs/` (resume PDF and design mockup) is gitignored: it is source material, never published, because the resume includes a phone number.
+- Content comes from Rajat's resume. `docs/` (full resume PDF and design mockup) is gitignored: it is source material, never published, because the full resume includes a phone number.
+- The contact sign's "Download resume" button serves `assets/Rajat_Verma_Resume.pdf`, a separate copy with no phone number. Before replacing it, check the new PDF's text and metadata for a phone number; keep the file name stable so the link never changes.
 
 ## Deployment
 
