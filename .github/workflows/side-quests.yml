@@ -1,0 +1,18 @@
+name: Side quests
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  generated-in-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Fails when data/side-quests.json is invalid, or workshop.html was not
+      # regenerated after editing it.
+      - run: python3 scripts/build-side-quests.py --check
