@@ -285,7 +285,14 @@ main.container {
   container: hero-name / inline-size;
 }
 
-@container hero-name (max-width: 104px) {
+@container hero-name (max-width: 107px) {
+  /* Uppercase "RAJAT" is 95px at 32px, wider than the column on 320px
+     phones (87px): shrink it so it stays on one line. */
+  .hero .hero-id h1 {
+    font-size: 28px;
+    letter-spacing: 0;
+  }
+
   .surname {
     position: absolute;
     width: 1px;
@@ -300,8 +307,11 @@ main.container {
   margin: 0;
   font-size: clamp(36px, 5vw, 48px);
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   line-height: 1.05;
+  /* Pixelify's lowercase "j" is cap height with no descender, so it reads as
+     a capital in "Rajat". All caps keeps every letter the same height. */
+  text-transform: uppercase;
 }
 
 .hero .role {
@@ -846,8 +856,9 @@ a.button.primary:hover {
   margin: 18px 0 0;
   font-size: 36px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   line-height: 1.05;
+  text-transform: uppercase; /* Same reason as .hero h1. */
 }
 
 .splash-status {
@@ -1056,7 +1067,7 @@ a.button.primary:hover {
 
   .hero h1 {
     font-size: 32px;
-    letter-spacing: 0;
+    letter-spacing: 1px;
   }
 
   .hero .role {
