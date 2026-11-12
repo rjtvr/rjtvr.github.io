@@ -69,18 +69,19 @@ Shared rules:
   - Contact buttons stack full-width.
 - Notes don't tilt on phones.
 
-## Avatar
+## Avatar (mascot)
 
-- 16×16 pixel art as inline SVG (`viewBox="0 0 16 16"`, `shape-rendering="crispEdges"`). It's drawn at 128px on desktop (8px per art pixel) and 80px on phones.
-- Its layers are `.av-bob` (whole figure), `.av-body`, `.av-head` and `.av-eyes` (the two blue glints in the goggles).
-- **On first load:** it rises 3 art pixels into its frame in steps, then blinks twice. The animation is pure CSS, plays once, and is off under `prefers-reduced-motion`.
-- **Motion rule:** animate in whole art pixels with `step-end` / `steps()` timing, never smooth tweens, so it stays pixel art. Inside the SVG, CSS `1px` equals one art pixel.
+- A cursor-tracking chibi of Rajat, drawn as two 3×3 sprite sheets: `assets/mascot/rajat-directions.webp` (nine head directions) and `rajat-reactions.webp` (nine expressions). It's smooth colour art, not pixel art, and it replaced the 16×16 pixel SVG in both the hero and the splash.
+- Markup: `button.mascot` > `.mascot-squash` > `.mascot-dir` + `.mascot-react`. The splash copy is `.mascot-static` (`aria-hidden`, front-facing, no script). The sheets are swapped by `background-position` with `background-size: 300%`; there is no per-frame animation.
+- It is sized larger than `.avatar-frame` (168px, 104px on phones, nudged up with a negative `margin-top`) and the frame's `overflow: hidden` crops it to head and shoulders.
+- Behaviour comes from the inline script at the end of `index.html`, ported from the `page-mascot` skill. On fine pointers the head follows the cursor (eight sectors, a dead zone and hysteresis). A click blinks, then shows heart, sparkle or delighted in turn, with a squash bounce; four clicks within 1.6s make it dizzy. Touch devices skip tracking and keep the click reaction. The squash is skipped under `prefers-reduced-motion`.
+- To redraw it, run the `page-mascot` skill's `mascot.py` with the photo as `--reference`, and copy the two built `.webp` atlases over the files above (keep the names).
+- `assets/og-image.png` still shows the old pixel avatar until it is re-taken.
 
 ## Splash screen
 
 - Home page only, once per browser session (`sessionStorage` key `splash-seen`). Add `?splash` to the URL (`index.html?splash`) to show it every time while previewing. A `<head>` script adds `.show-splash` to `<html>` before first paint; the end-of-body script removes it after 5s or on any tap or key.
 - Timeline: the 12-segment bar fills in steps from 0.3s to 4.5s, then the screen fades out in 4 steps (4.6–5s). Keep the CSS timings and the 5000ms timeout in step.
-- The hero avatar intro is held while the splash shows and plays when it closes.
 - Without JS, or with storage blocked, there is no splash. Under reduced motion it still shows and can be skipped, but the dots and fade are static.
 
 ## Gotchas
@@ -105,8 +106,8 @@ Mockup inline styles map to classes here. Port new elements as named classes in 
 | Oat + `site.css` | Tailwind Play CDN, inline styles | The owner picked Oat; the Play CDN isn't meant for production, and inline styles from the mockup would need every change made in many places |
 | Resume used only as source material | A public Resume download | The PDF includes a phone number, and the whole repo is public |
 | Go/Python shown as "Leveling up" | Leaving them off | Framed as learning in progress, not claimed experience |
-| Rise-and-blink intro on load | Pointer-following eyes, hand wave, looping bob/blink | The owner tried and rejected each in turn; they wanted one normal animation on first load |
-| 16×16 avatar | 32×32 redraw with display-scale sizing | Tried, then reverted at the owner's request |
+| Rise-and-blink intro on load (pixel avatar, since removed) | Pointer-following eyes, hand wave, looping bob/blink | The owner tried and rejected each in turn; the mascot's head-tracking later replaced it at their request |
+| Mascot sprite sheets (colour art) in the hero and splash | The 16×16 pixel avatar and its rise-and-blink intro | The owner asked for a mascot that looks like their own avatar, and chose to replace it in both places. It breaks from the pixel look on purpose |
 | Pixel-drawn SVG digits for Workshop stat numbers (5×7 glyphs, `role="img"` + `aria-label`) | Bold or larger Pixelify Sans, Silkscreen | Pixelify's "5" reads as "S" at stat size, and Silkscreen overflows the desktop tiles; SVG keeps both fonts unchanged and stays crisp. New stat values need their glyphs drawn |
 | Splash screen once per session, skippable | Showing it on every load, unskippable | The owner asked for a 5s splash; limiting it keeps return visits and in-site navigation fast |
 | Resume as a split button: "View resume" (new tab) + attached download square, pixel-drawn icons | Two separate buttons; an in-page PDF preview | Fits the contact row on desktop; in-page PDF embeds fail on Android Chrome and show one page on iOS |
